@@ -151,7 +151,26 @@ bool validarCedula(const string& cedula) {
             return false;
         }
     }
-    return true;
+
+    int suma =0;
+    for(int i =0; i<9; i++){
+        int digito = cedula[i]- '0';
+        if(i%2==0){
+            digito*=2;
+            if(digito>9){
+                digito-=9;
+            }
+        }
+        suma += digito;
+    }
+    int verificar = cedula[9]- '0';
+    int ultimodigito;
+    if (suma % 10 == 0){
+        ultimodigito =0;
+    }else {
+        ultimodigito = 10 - (suma % 10);
+    }
+    return ultimodigito == verificar;
 }
 
 void menuBienvenida() {
@@ -177,7 +196,7 @@ void menuBienvenida() {
             system("cls");
             break;
         } else {
-            cout << "Cédula no válida. Debe ingresar exactamente 10 dígitos.\n";
+            cout << "Cédula no válida. Debe ingresar una cedula correcta.\n";
         }
     }
 }

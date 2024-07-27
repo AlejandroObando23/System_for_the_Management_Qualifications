@@ -5,10 +5,19 @@
 #define ANSI_BACKGROUND_BLUE "\033[44m"
 #define ANSI_BACKGROUND_RESET "\033[0m"
 using namespace std;
+
+struct Materia{
+    string nombre;
+    string NRC;
+};
+
+Materia materia;
 void menuBienvenida();
 void mostrarMenuPrincipal(int opcionActual) {
 
     SetConsoleOutputCP(CP_UTF8);
+    cout << "\tMateria:" << materia.nombre << endl;
+    cout << "\tNRC:\t" << materia.NRC << endl;
     cout << "\n\tSeleccione una opción:\n" << endl;
     cout << "\t╔═════════════════════════════════╗" << endl;
     for (int i = 1; i <= 6; i++) {
@@ -91,8 +100,7 @@ int escogerOpcion()
         }
     }
 }
-void menu()
-{
+void menu(){
 
     bool salir = false;
     int opcion, op, op1;
@@ -103,7 +111,14 @@ void menu()
         switch(opcion)
         {
         case 1:
-            cout<<"Hola";
+            cout<<"═════════════════════════════════" << endl;
+            cout << "\tINGRESO MATERIA Y NRC" << endl;
+            cout<<"═════════════════════════════════" << endl;
+            cout << "\nIngrese el NRC: ";
+            cin>> materia.NRC;
+            cout <<"\nIngrese la maetria: ";
+            cin>> materia.nombre;
+
             break;
         case 2:
 
@@ -133,6 +148,8 @@ void menu()
 
 }
 int main(){
+    materia.nombre = "- aun no ingresado -";
+    materia.NRC = "- aun no ingresado -";
 
     menuBienvenida();
     menu();
@@ -187,6 +204,7 @@ void menuBienvenida() {
     cout << "Por favor, ingrese sus datos" <<endl;
     cout << "\nIngrese su nombre: ";
     cin >> nombre ;
+    fflush(stdin);
     while (true) {
         cout << "Ingrese su cédula: ";
         cin >> cedula;

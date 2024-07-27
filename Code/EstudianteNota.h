@@ -25,6 +25,7 @@ public:
     void setApellido(string a){
         apellido=a;
     }
+
     void ingresoNota(int i, double n){
         notas[i] = n;
     }
@@ -35,5 +36,14 @@ public:
             suma = suma + notas[i];
         }
         promedio = suma/N;
+    }
+
+    void imprimirDatos(){
+
+        cout <<"Alumno: " << nombre << " " <<apellido << endl;
+        for(int i = 0; i<N; i++){
+            cout <<"Nota " << i+1 << ": " << notas[i] << endl;
+        }
+
     }
 };

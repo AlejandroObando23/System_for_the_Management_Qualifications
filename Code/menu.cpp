@@ -152,7 +152,6 @@ void menu(){
             cout <<"\nCuantas notas por estudiante: ";
             cin >> numNotas;
             estudiante = new Estudiante[numEstudiantes];
-            estudiante->setNotas(numNotas);
             break;
         case 3:{
             if((materia.NRC != "- aun no ingresado -") && (numNotas != -1)){
@@ -162,16 +161,19 @@ void menu(){
                 cout <<"Ingrese (S) en cualquier momento para cancelar y salir al menu"<< endl;
 
                 for(int i=0; i< numEstudiantes;i++){
+                    estudiante[i].setNotas(numNotas);
+                    fflush(stdin);
                     string nombre, apellido;
                     cout << "\n=== ESTUDIANTE #" << i+1 << " ==="<< endl;
                     cout << "Ingrese el nombre del estudiante: ";
                     cin >> nombre;
-                    estudiante->setNombre(nombre);
+                    estudiante[i].setNombre(nombre);
                     cout << "Ingrese el apellido del estudiante:";
                     cin >> apellido;
-                    estudiante->setApellido(apellido);
+                    estudiante[i].setApellido(apellido);
                     cout << endl;
                     for(int j = 0; j< numNotas; j++){
+                        fflush(stdin);
                         char validar[5];
                         int N;
                         double nota;
@@ -179,10 +181,11 @@ void menu(){
                         cout << "Ingrese la nota #" << j+1 << ": ";
                         cin >> validar;
                         N=validarNumero(validar);
+
                         if( N != 0){
                             nota = atof(validar);
                             if((nota>= 0) && (nota <=20)){
-                                estudiante->ingresoNota(j,nota);
+                                estudiante[i].ingresoNota(j,nota);
                             }else{
                                 N = 0;
                                 cout << "==== Ingrese una nota entre 0 y 20 ====" << endl;

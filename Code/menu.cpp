@@ -145,7 +145,7 @@ do{
     cin>>nom;
     cout<<"Ingrese su cedula"<<endl;
     cin>>cedu;
-    if(nom=="Sara" && cedu=="1721623368"){
+    if(cedu.size()>=10){
         menu();
         secion=false;
 

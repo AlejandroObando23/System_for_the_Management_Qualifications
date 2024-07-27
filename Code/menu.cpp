@@ -24,7 +24,7 @@ void mostrarMenuPrincipal(int opcionActual)
             cout << "\t1. Ingresar Materia y Nrc" << endl;
             break;
         case 2:
-            cout << "\t2. RIngresar estudiantes y notas a registrar" << endl;
+            cout << "\t2. Ingresar estudiantes y notas a registrar" << endl;
             break;
         case 3:
             cout << "\t3. Ingreso de notas por estudiante" << endl;

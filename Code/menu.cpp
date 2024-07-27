@@ -7,7 +7,7 @@ void mostrarMenuPrincipal(int opcionActual)
 {
     cout << "\n\tSeleccione una opcion:\n" << endl;
     cout << "\t===========================" << endl;
-    for(int i=1; i<=5; i++)
+    for(int i=1; i<=7; i++)
     {
         if(i==opcionActual)
         {
@@ -30,23 +30,15 @@ void mostrarMenuPrincipal(int opcionActual)
             cout << "\t3. Ingreso de notas por estudiante" << endl;
             break;
         case 4:
-            cout << "\t4. Ver Reporte de calificanes del NRC" << endl;
+            cout << "\t4. Ordenamieto" << endl;
             break;
         case 5:
-            cout << "\t5. Salir" << endl;
+            cout << "\t5. Busqueda" << endl;
             break;
         case 6:
-            cout << "\t6. Ver Doctores"<< endl;
+            cout << "\t6. Salir"<< endl;
             break;
-        case 7:
-            cout << "\t7. Doctores en turno" << endl;
-            break;
-        case 8:
-            cout << "\t8. Terminar dia" << endl;
-            break;
-        case 9:
-            cout << "\t9. Salir" << endl;
-            break;
+
 
         }
     }
@@ -64,10 +56,10 @@ int escogerOpcion()
         switch(tecla)
         {
         case 72:
-            opcionActual=(opcionActual>1)?opcionActual-1:5;
+            opcionActual=(opcionActual>1)?opcionActual-1:7;
             break;
         case 80:
-            opcionActual=opcionActual<5?opcionActual+1:1;
+            opcionActual=opcionActual<7?opcionActual+1:1;
             break;
         case 13:
             system("cls");
@@ -88,13 +80,19 @@ int escogerOpcion()
             case 5:
                 return 5;
                 break;
+            case 6:
+                return 6;
+                break;
+            case 7:
+                return 7;
+                break;
 
             };
             break;
         }
     }
 }
-int main()
+void menu()
 {
 
     bool salir = false;
@@ -119,7 +117,12 @@ int main()
      cout<<"Hola";
             break;
         case 5:
-            cout<<"Saliendo del programa...";
+        cout<<"Hola";
+            break;
+        case 6:
+            cout<<"Hola";
+        case 7:
+
             salir = true;
             break;
 
@@ -128,5 +131,33 @@ int main()
     }
     while(!salir);
 
-    return 0;
+
+}
+int main(){
+int repetir;
+bool secion=true;
+string nom;
+string cedu;
+
+do{
+    cout<<"Bienvenido al sistema de notas"<<endl;
+    cout<<"Ingrese su nombre"<<endl;
+    cin>>nom;
+    cout<<"Ingrese su cedula"<<endl;
+    cin>>cedu;
+    if(nom=="Sara" && cedu=="1721623368"){
+        menu();
+        secion=false;
+
+    }else{
+        secion=true;
+    }
+    system("cls");
+
+}while(secion);
+    cout<<"Saliendo del programa...";
+
+   return 0;
+
+
 }

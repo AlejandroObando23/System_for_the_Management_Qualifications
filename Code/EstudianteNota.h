@@ -3,24 +3,37 @@
 
 using namespace std;
 
-template <int N>
 class Estudiante{
 private:
     string nombre;
     string apellido;
-    double notas[N];
+    double *notas;
     double promedio;
+    int N;
 
 public:
+    Estudiante(){}
 
-    Estudiante(string nom, string ape): nombre(nom), apellido(ape){}
+    void setNotas(int n){
+        notas = new double[n];
+        N = n;
+    }
 
-    void calcularPromedio(){
-        suma = 0;
-        for(int i = 0, i<N, i++){
+    void setNombre(string n){
+        nombre=n;
+    }
+    void setApellido(string a){
+        apellido=a;
+    }
+    void ingresoNota(int i, double n){
+        notas[i] = n;
+    }
+
+    void promediar(){
+        double suma;
+        for(int i = 0; i<N; i++){
             suma = suma + notas[i];
         }
         promedio = suma/N;
     }
-
 };

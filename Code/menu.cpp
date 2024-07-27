@@ -2,6 +2,7 @@
 #include <conio.h>
 #include <cctype>
 #include <windows.h>
+#include "EstudianteNota.h"
 #define ANSI_BACKGROUND_BLUE "\033[44m"
 #define ANSI_BACKGROUND_RESET "\033[0m"
 using namespace std;
@@ -13,13 +14,32 @@ struct Materia{
 
 Materia materia;
 void menuBienvenida();
+
+int validarNumero(char numero[])
+{
+    int i;
+    for(i = 0; i<strlen(numero); i++)
+    {
+        if(!isdigit(numero[i]))
+        {
+            if(numero[i] != '.')
+            {
+                MessageBeep(MB_ICONHAND);
+                cout << "Ingrese un valor flotante valido" << endl;
+                return 0;
+            }
+        }
+    }
+    return 1;
+}
+
 void mostrarMenuPrincipal(int opcionActual) {
 
     SetConsoleOutputCP(CP_UTF8);
     cout << "\tMateria:" << materia.nombre << endl;
     cout << "\tNRC:\t" << materia.NRC << endl;
     cout << "\n\tSeleccione una opción:\n" << endl;
-    cout << "\t╔═════════════════════════════════╗" << endl;
+    cout << "\t╔══════════════════════════════════╗" << endl;
     for (int i = 1; i <= 6; i++) {
         if (i == opcionActual) {
             printf("%s", ANSI_BACKGROUND_BLUE);
@@ -30,28 +50,28 @@ void mostrarMenuPrincipal(int opcionActual) {
         cout << "\t║ ";
         switch (i) {
         case 1:
-            cout << "1. Ingresar Materia y Nrc       ";
+            cout << "1. Ingresar Materia y Nrc        ";
             break;
         case 2:
-            cout << "2. Ingresar estudiantes y notas ";
+            cout << "2. Ingresar #Estudiantes y #Notas";
             break;
         case 3:
-            cout << "3. Ingreso de notas por estud.  ";
+            cout << "3. Ingreso de notas por estud.   ";
             break;
         case 4:
-            cout << "4. Ordenamiento                 ";
+            cout << "4. Ordenamiento                  ";
             break;
         case 5:
-            cout << "5. Búsqueda                     ";
+            cout << "5. Búsqueda                      ";
             break;
         case 6:
-            cout << "6. Salir                        ";
+            cout << "6. Salir                         ";
             break;
         }
         cout << "║" << endl;
     }
     printf("%s", ANSI_BACKGROUND_RESET);
-    cout << "\t╚═════════════════════════════════╝" << endl;
+    cout << "\t╚══════════════════════════════════╝" << endl;
 }
 int escogerOpcion()
 {
@@ -104,6 +124,9 @@ void menu(){
 
     bool salir = false;
     int opcion, op, op1;
+    int numEstudiantes=-1, numNotas=-1;
+    Estudiante *estudiante;
+
     do
     {
         opcion = escogerOpcion();
@@ -116,17 +139,71 @@ void menu(){
             cout<<"═════════════════════════════════" << endl;
             cout << "\nIngrese el NRC: ";
             cin>> materia.NRC;
-            cout <<"\nIngrese la maetria: ";
+            cout <<"\nIngrese la materia: ";
             cin>> materia.nombre;
 
             break;
         case 2:
+            cout<<"═════════════════════════════════" << endl;
+            cout << "\tINGRESO #Estudiantes y #Notas" << endl;
+            cout<<"═════════════════════════════════" << endl;
+            cout << "\nCuantos estudiantes desea registrar: ";
+            cin >>numEstudiantes;
+            cout <<"\nCuantas notas por estudiante: ";
+            cin >> numNotas;
+            estudiante = new Estudiante[numEstudiantes];
+            estudiante->setNotas(numNotas);
+            break;
+        case 3:{
+            if((materia.NRC != "- aun no ingresado -") && (numNotas != -1)){
+                cout<<"═════════════════════════════════════════" << endl;
+                cout << "\tINGRESO de notas por estudiante" << endl;
+                cout<<"═════════════════════════════════════════" << endl;
+                cout <<"Ingrese (S) en cualquier momento para cancelar y salir al menu"<< endl;
 
-             cout<<"Hola";
+                for(int i=0; i< numEstudiantes;i++){
+                    string nombre, apellido;
+                    cout << "\n=== ESTUDIANTE #" << i+1 << " ==="<< endl;
+                    cout << "Ingrese el nombre del estudiante: ";
+                    cin >> nombre;
+                    estudiante->setNombre(nombre);
+                    cout << "Ingrese el apellido del estudiante:";
+                    cin >> apellido;
+                    estudiante->setApellido(apellido);
+                    cout << endl;
+                    for(int j = 0; j< numNotas; j++){
+                        char validar[5];
+                        int N;
+                        double nota;
+                        do{
+                        cout << "Ingrese la nota #" << j+1 << ": ";
+                        cin >> validar;
+                        N=validarNumero(validar);
+                        if( N != 0){
+                            nota = atof(validar);
+                            if((nota>= 0) && (nota <=20)){
+                                estudiante->ingresoNota(j,nota);
+                            }else{
+                                N = 0;
+                                cout << "==== Ingrese una nota entre 0 y 20 ====" << endl;
+                                MessageBeep(MB_ICONHAND);
+                            }
+                        }
+                        }while(N == 0);
+
+                    }
+                }
+
+            }else{
+                MessageBeep(MB_ICONHAND);
+                cout << "\n========================================================================================" << endl;
+                cout << "Por favor Ingrese la información de #alumnos y notas o registre correctamente la materia" << endl;
+                cout << "========================================================================================" << endl;
+            }
+
+
             break;
-        case 3:
-            cout<<"Hola";
-            break;
+        }
         case 4:
      cout<<"Hola";
             break;
@@ -139,9 +216,8 @@ void menu(){
 
             salir = true;
             break;
-
-
         }
+        system("pause");
     }
     while(!salir);
 
@@ -214,6 +290,7 @@ void menuBienvenida() {
             system("cls");
             break;
         } else {
+            MessageBeep(MB_ICONHAND);
             cout << "Cédula no válida. Debe ingresar una cedula correcta.\n";
         }
     }

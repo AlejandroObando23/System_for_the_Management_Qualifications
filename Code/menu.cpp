@@ -1,49 +1,48 @@
 #include <iostream>
 #include <conio.h>
+#include <cctype>
+#include <windows.h>
 #define ANSI_BACKGROUND_BLUE "\033[44m"
 #define ANSI_BACKGROUND_RESET "\033[0m"
 using namespace std;
-void mostrarMenuPrincipal(int opcionActual)
-{
-    cout << "\n\tSeleccione una opcion:\n" << endl;
-    cout << "\t===========================" << endl;
-    for(int i=1; i<=7; i++)
-    {
-        if(i==opcionActual)
-        {
-            printf("%s",ANSI_BACKGROUND_BLUE);
-        }
-        else
-        {
-            printf("%s",ANSI_BACKGROUND_RESET);
+void menuBienvenida();
+void mostrarMenuPrincipal(int opcionActual) {
+
+    SetConsoleOutputCP(CP_UTF8);
+    cout << "\n\tSeleccione una opción:\n" << endl;
+    cout << "\t╔═════════════════════════════════╗" << endl;
+    for (int i = 1; i <= 6; i++) {
+        if (i == opcionActual) {
+            printf("%s", ANSI_BACKGROUND_BLUE);
+        } else {
+            printf("%s", ANSI_BACKGROUND_RESET);
         }
 
-        switch(i)
-        {
+        cout << "\t║ ";
+        switch (i) {
         case 1:
-            cout << "\t1. Ingresar Materia y Nrc" << endl;
+            cout << "1. Ingresar Materia y Nrc       ";
             break;
         case 2:
-            cout << "\t2. Ingresar estudiantes y notas a registrar" << endl;
+            cout << "2. Ingresar estudiantes y notas ";
             break;
         case 3:
-            cout << "\t3. Ingreso de notas por estudiante" << endl;
+            cout << "3. Ingreso de notas por estud.  ";
             break;
         case 4:
-            cout << "\t4. Ordenamieto" << endl;
+            cout << "4. Ordenamiento                 ";
             break;
         case 5:
-            cout << "\t5. Busqueda" << endl;
+            cout << "5. Búsqueda                     ";
             break;
         case 6:
-            cout << "\t6. Salir"<< endl;
+            cout << "6. Salir                        ";
             break;
-
-
         }
+        cout << "║" << endl;
     }
-    printf("%s",ANSI_BACKGROUND_RESET);
-    cout << "\t===========================" << endl;
+    printf("%s", ANSI_BACKGROUND_RESET);
+    cout << "\t╚═════════════════════════════════╝" << endl;
 }
 int escogerOpcion()
 {
@@ -120,7 +119,7 @@ void menu()
         cout<<"Hola";
             break;
         case 6:
-            cout<<"Hola";
+            cout<<"Saliendo del programa....";
         case 7:
 
             salir = true;
@@ -134,30 +133,54 @@ void menu()
 
 }
 int main(){
-int repetir;
-bool secion=true;
-string nom;
-string cedu;
 
-do{
-    cout<<"Bienvenido al sistema de notas"<<endl;
-    cout<<"Ingrese su nombre"<<endl;
-    cin>>nom;
-    cout<<"Ingrese su cedula"<<endl;
-    cin>>cedu;
-    if(cedu.size()>=10){
-        menu();
-        secion=false;
-
-    }else{
-        secion=true;
-    }
-    system("cls");
-
-}while(secion);
-    cout<<"Saliendo del programa...";
+    menuBienvenida();
+    menu();
 
    return 0;
 
-
 }
+
+
+bool validarCedula(const string& cedula) {
+    if (cedula.length() != 10) {
+        return false;
+    }
+    for (char c : cedula) {
+        if (!isdigit(c)) {
+            return false;
+        }
+    }
+    return true;
+}
+
+void menuBienvenida() {
+    string nombre;
+    string cedula;
+    SetConsoleOutputCP(CP_UTF8);
+
+    cout << "╔═══════════════════════════════════╗\n";
+    cout << "║                                   ║\n";
+    cout << "║  UNIDAD EDUCATIVA DATA STRUCTURE  ║\n";
+    cout << "║         SISTEMA DE NOTAS          ║\n";
+    cout << "║                                   ║\n";
+    cout << "╚═══════════════════════════════════╝\n";
+    cout << "Por favor, ingrese sus datos" <<endl;
+    cout << "\nIngrese su nombre: ";
+    cin >> nombre ;
+    while (true) {
+        cout << "Ingrese su cédula: ";
+        cin >> cedula;
+
+        if (validarCedula(cedula)) {
+            cout << "Acceso concedido.\n";
+            system("cls");
+            break;
+        } else {
+            cout << "Cédula no válida. Debe ingresar exactamente 10 dígitos.\n";
+        }
+    }
+}
+
+
+

@@ -247,14 +247,13 @@ void menu(){
                 //  Poner función de Radixsort aquí
                 break;
             case 8:
-            cout <<"regresando al menu"<<endl;
+                cout <<"regresando al menu"<<endl;
+                break;
+            }
             break;
-
-        }
         case 6:
 
-
-                metodoBusqueda = escogerMetodoBusqueda();
+            metodoBusqueda = escogerMetodoBusqueda();
             switch (metodoBusqueda) {
             case 1:
                 cout << "Método de Búsqueda Lineal seleccionado." << endl;
@@ -272,13 +271,14 @@ void menu(){
                 cout << "Regresando al menú principal." << endl;
                 break;
             }
+            break;
         case 7:
 
             salir = true;
             break;
         }
-        system("pause");
     }
+    system("pause");
    }while(!salir);
 
 

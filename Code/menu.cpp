@@ -132,7 +132,6 @@ void menu(){
     int opcion,metodoOrdenacion,metodoBusqueda;
     int numEstudiantes=-1, numNotas=-1;
     Estudiante *estudiante;
-    Estudiante *estudiantesOrdenados;
 
     do
     {
@@ -241,11 +240,10 @@ void menu(){
                 cout << "NRC: " << materia.NRC<<endl;
                 cout<<"Nombre"<<"\t\t"<<"Apellido"<<"\t";
 
-                for (int i = 1; i < numEstudiantes; i++) {
+                for (int i = 1; i <= numNotas; i++) {
                     cout<<"N"<<i<<"\t";
-
                 }
-                cout<<"Promedio"<<endl;
+                cout<<"Promedio\n"<<endl;
                 for (int i = 0; i < numEstudiantes; i++) {
                     estudiante[i].imprimirDatos();
                 }
@@ -257,40 +255,60 @@ void menu(){
             }
             break;
         case 5:{
+            bool regresar = false;
             if(notasIngresadas){
+                Estudiante estudiantesOrdenados[numEstudiantes];
+                for(int i =0; i< numEstudiantes; i++){
+                    estudiantesOrdenados[i]=estudiante[i];
+                }
                 metodoOrdenacion = escogerMetodoOrdenacion();
                 switch (metodoOrdenacion) {
                 case 1:
                     cout << "Método de Intercambio Simple seleccionado." << endl;
-                    // Poner función de Intercambio Simple aquí
+                    ordenamientoIntercambio(estudiantesOrdenados, numEstudiantes);
                     break;
                 case 2:
                     cout << "Método de Selección seleccionado." << endl;
-                    //  Poner función de Selección aquí
+                    ordenamientoSeleccion(estudiantesOrdenados, numEstudiantes);
                     break;
                 case 3:
                     cout << "Método de Burbuja seleccionado." << endl;
-                    //  Poner función de Burbuja aquí
+                    ordenamientoBurbuja(estudiantesOrdenados, numEstudiantes);
                     break;
                 case 4:
                     cout << "Método de Quicksort seleccionado." << endl;
-                    //  Poner función de Quicksort aquí
+                    ordenamientoQuicksort(estudiantesOrdenados,0, numEstudiantes-1);
                     break;
                 case 5:
                     cout << "Método de Shellsort seleccionado." << endl;
-                    //  Poner función de Shellsort aquí
+                    ordenamientoShellsort(estudiantesOrdenados, numEstudiantes);
                     break;
                 case 6:
                     cout << "Método de BucketSort seleccionado." << endl;
-                    //  Poner función de BucketSort aquí
+
                     break;
                 case 7:
                     cout << "Método de Radixsort seleccionado." << endl;
-                    //  Poner función de Radixsort aquí
+                    //ordenarRadix(estudiantesOrdenados, numEstudiantes);
                     break;
                 case 8:
                     cout <<"regresando al menu"<<endl;
+                    regresar =true;
                     break;
+                }
+
+                if(!regresar){
+                    cout << "Los datos ordenados son: " << endl;
+                    cout<<"Nombre"<<"\t\t"<<"Apellido"<<"\t";
+
+                    for (int i = 1; i <= numNotas; i++) {
+                        cout<<"N"<<i<<"\t";
+
+                    }
+                    cout<<"Promedio\n"<<endl;
+                    for (int i = 0; i < numEstudiantes; i++) {
+                        estudiantesOrdenados[i].imprimirDatos();
+                    }
                 }
             }else{
                 MessageBeep(MB_ICONHAND);
@@ -299,6 +317,7 @@ void menu(){
                 cout << "========================================================================================" << endl;
             }
             break;
+        }
         case 6:
             if(notasIngresadas){
                 metodoBusqueda = escogerMetodoBusqueda();
@@ -330,7 +349,6 @@ void menu(){
             salir = true;
             break;
         }
-    }
     system("pause");
    }while(!salir);
 

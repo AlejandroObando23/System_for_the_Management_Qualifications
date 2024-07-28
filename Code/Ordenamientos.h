@@ -53,7 +53,7 @@ void ordenamientoQuicksort(T a[], int primero, int ultimo){
     if(primero < ultimo){
         int i, j, central;
         double pivote;
-        int aux;
+        T aux;
 
         central = (primero + ultimo)/2;
         pivote = a[central].getPromedio();
@@ -235,22 +235,25 @@ void mezclaNatural(T arr[], int n) {
 
     delete[] inicios;
 }
-int maximo(int *a, int n){
-    int mayor = a[0];
+
+template <typename T>
+int maximo(T a[], int n){
+    double mayor = a[0].getPromedio();
     for(int i = 1; i <n; i++){
-        if(mayor < a[i]){
-            mayor = a[i];
+        if(mayor < a[i].getPromedio()){
+            mayor = a[i].getPromedio();
         }
     }
     return mayor;
 }
 
-void ordenamientoPorConteo(int* a, int n, int exp) {
+template <typename T>
+void ordenamientoPorConteo(T a[], int n, int exp) {
     int salida[n];
     int conteo[10] = {0};
 
     for (int i = 0; i < n; i++) {
-        int indice = (a[i] / exp) % 10;
+        int indice = (a[i].getPromedio() / exp) % 10;
         conteo[indice]++;
     }
 
@@ -261,7 +264,7 @@ void ordenamientoPorConteo(int* a, int n, int exp) {
 
 
     for (int i = n - 1; i >= 0; i--) {
-        int indice = (a[i] / exp) % 10;
+        int indice = (a[i].getPromedio() / exp) % 10;
         salida[conteo[indice] - 1] = a[i];
         conteo[indice]--;
     }
@@ -271,8 +274,9 @@ void ordenamientoPorConteo(int* a, int n, int exp) {
     }
 }
 
-void ordenarRadix(int *a, int n){
-    int max1=maximo(a,n);
+template <typename T>
+void ordenarRadix(T a[], int n){
+    double max1=maximo(a,n);
     int exp = 1;
     while ((max1/exp)>=1){
         ordenamientoPorConteo(a,n,exp);

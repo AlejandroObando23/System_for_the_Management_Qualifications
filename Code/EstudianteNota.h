@@ -38,12 +38,20 @@ public:
         promedio = suma/N;
     }
 
+    void setPromedio(double n){
+        promedio = n;
+    }
+
     double getPromedio(){
         return promedio;
     }
 
     string getNombre(){
         return nombre;
+    }
+
+    string getApellido(){
+        return apellido;
     }
 
     void imprimirDatos(){

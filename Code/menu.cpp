@@ -3,6 +3,7 @@
 #include <cctype>
 #include <windows.h>
 #include "EstudianteNota.h"
+#include "Busquedas.h"
 #include "Ordenamientos.h"
 #define ANSI_BACKGROUND_BLUE "\033[44m"
 #define ANSI_BACKGROUND_RESET "\033[0m"
@@ -318,9 +319,17 @@ void menu(){
             }
             break;
         }
-        case 6:
+        case 6:{
+            tablaHash<Estudiante> tabla(numEstudiantes + 1);
+            double calificacion;
+            int index;
+            Estudiante estudianteEncontrado;
+
             if(notasIngresadas){
                 metodoBusqueda = escogerMetodoBusqueda();
+                cout << "Ingrese el promedio que desea buscar: ";
+                cin >> calificacion;
+
                 switch (metodoBusqueda) {
                 case 1:
                     cout << "Método de Búsqueda Lineal seleccionado." << endl;
@@ -332,12 +341,24 @@ void menu(){
                     break;
                 case 3:
                     cout << "Método de Búsqueda Hash seleccionado." << endl;
-                    //funcion
+                    tabla.crearTabla();
+                    tabla.insertarElementos(estudiante);
+                    index = tabla.buscarElementos(calificacion);
+                    estudianteEncontrado = tabla.recuperarElemento(index);
+
                     break;
                 case 4:
                     cout << "Regresando al menú principal." << endl;
                     break;
                 }
+
+                cout << "La calificación a buscar fue de " << calificacion << ": " << endl;
+                cout << "\nCorresponde al estudiante: " << endl;
+                cout << "Alumno: " << estudianteEncontrado.getNombre() << " " << estudianteEncontrado.getApellido() << endl;
+                cout << "Promedio: " << estudianteEncontrado.getPromedio() << endl;
+                cout << "index: " << index << endl;
+
+
             }else{
                 MessageBeep(MB_ICONHAND);
                 cout << "\n========================================================================================" << endl;
@@ -345,6 +366,7 @@ void menu(){
                 cout << "========================================================================================" << endl;
             }
             break;
+        }
         case 7:
             salir = true;
             break;

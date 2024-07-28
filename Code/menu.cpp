@@ -62,7 +62,7 @@ void mostrarMenuPrincipal(int opcionActual) {
             cout << "3. Ingreso de notas por estud.   ";
             break;
         case 4:
-            cout << "5. ver notas                     ";
+            cout << "4. ver notas                     ";
             break;
         case 5:
             cout << "5. Ordenamiento                  ";
@@ -214,8 +214,9 @@ void menu(){
             break;
         }
         case 4:
-<<<<<<< HEAD
-            metodoOrdenacion = escogerMetodoOrdenacion();
+            break;
+        case 5:{
+           metodoOrdenacion = escogerMetodoOrdenacion();
             switch (metodoOrdenacion) {
             case 1:
                 cout << "Método de Intercambio Simple seleccionado." << endl;
@@ -246,11 +247,14 @@ void menu(){
                 //  Poner función de Radixsort aquí
                 break;
             case 8:
-                break;
-            }
+            cout <<"regresando al menu"<<endl;
             break;
-        case 5:
-        metodoBusqueda = escogerMetodoBusqueda();
+
+        }
+        case 6:
+
+
+                metodoBusqueda = escogerMetodoBusqueda();
             switch (metodoBusqueda) {
             case 1:
                 cout << "Método de Búsqueda Lineal seleccionado." << endl;
@@ -268,35 +272,18 @@ void menu(){
                 cout << "Regresando al menú principal." << endl;
                 break;
             }
-            break;
-=======
-            for(int i = 0; i< numEstudiantes; i++){
-                cout << "\n=== Estudiante #" << i+1 << "===" << endl;
-                estudiante[i].imprimirDatos();
-            }
-            break;
-        case 5:
-            estudiantesOrdenados = estudiante;
-            ordenamientoIntercambio(estudiantesOrdenados, numEstudiantes);
-
-            for(int i = 0; i< numEstudiantes; i++){
-                cout << "\n=== Estudiante #" << i+1 << "===" << endl;
-                estudiantesOrdenados[i].imprimirDatos();
-            }
->>>>>>> d7d36d836cb67814db01baa83fe80b515af22bf9
-            break;
-        case 6:
-            break;
         case 7:
+
             salir = true;
             break;
         }
         system("pause");
     }
-    while(!salir);
+   }while(!salir);
 
 
 }
+
 int main(){
 
     menuBienvenida();

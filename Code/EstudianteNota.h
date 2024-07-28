@@ -42,6 +42,10 @@ public:
         return promedio;
     }
 
+    string getNombre(){
+        return nombre;
+    }
+
     void imprimirDatos(){
 
         cout<< nombre;

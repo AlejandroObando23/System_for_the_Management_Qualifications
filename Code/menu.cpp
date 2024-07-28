@@ -29,7 +29,7 @@ int validarNumero(char numero[])
             if(numero[i] != '.')
             {
                 MessageBeep(MB_ICONHAND);
-                cout << "Ingrese un valor flotante valido" << endl;
+                cout << "Ingrese un valor valido" << endl;
                 return 0;
             }
         }
@@ -128,7 +128,7 @@ int escogerOpcion()
 }
 void menu(){
 
-    bool salir = false;
+    bool salir = false, notasIngresadas = false;
     int opcion,metodoOrdenacion,metodoBusqueda;
     int numEstudiantes=-1, numNotas=-1;
     Estudiante *estudiante;
@@ -140,33 +140,51 @@ void menu(){
 
         switch(opcion)
         {
-        case 1:
+        case 1:{
             cout<<"═════════════════════════════════" << endl;
             cout << "\tINGRESO MATERIA Y NRC" << endl;
             cout<<"═════════════════════════════════" << endl;
-            cout << "\nIngrese el NRC: ";
-            cin>> materia.NRC;
+
+            char validar[10];
+            int N;
+            do{
+                cout << "\nIngrese el NRC: ";
+                cin>> validar;
+                N = validarNumero(validar);
+                if(N == 1){
+                    materia.NRC = validar;
+                }else{
+                    MessageBeep(MB_ICONHAND);
+                }
+            }while(N == 0);
             cout <<"\nIngrese la materia: ";
             cin.ignore();
             getline(cin, materia.nombre);
 
             break;
+        }
         case 2:
-            cout<<"═════════════════════════════════" << endl;
-            cout << "\tINGRESO #Estudiantes y #Notas" << endl;
-            cout<<"═════════════════════════════════" << endl;
-            cout << "\nCuantos estudiantes desea registrar: ";
-            cin >>numEstudiantes;
-            cout <<"\nCuantas notas por estudiante: ";
-            cin >> numNotas;
-            estudiante = new Estudiante[numEstudiantes];
+            if(materia.NRC != ""){
+                cout<<"═════════════════════════════════" << endl;
+                cout << "\tINGRESO #Estudiantes y #Notas" << endl;
+                cout<<"═════════════════════════════════" << endl;
+                cout << "\nCuantos estudiantes desea registrar: ";
+                cin >>numEstudiantes;
+                cout <<"\nCuantas notas por estudiante: ";
+                cin >> numNotas;
+                estudiante = new Estudiante[numEstudiantes];
+            }else{
+                MessageBeep(MB_ICONHAND);
+                cout << "\n========================================================================================" << endl;
+                cout << "Por favor Ingrese la materia y el NRC correspondientes" << endl;
+                cout << "========================================================================================" << endl;
+            }
             break;
         case 3:{
-            if((materia.NRC != " ") && (numNotas != -1)){
+            if((materia.NRC != "") && (numNotas != -1)){
                 cout<<"═════════════════════════════════════════" << endl;
                 cout << "\tINGRESO de notas por estudiante" << endl;
                 cout<<"═════════════════════════════════════════" << endl;
-                cout <<"Ingrese (S) en cualquier momento para cancelar y salir al menu"<< endl;
 
                 for(int i=0; i< numEstudiantes;i++){
                     estudiante[i].setNotas(numNotas);
@@ -204,7 +222,7 @@ void menu(){
                     }
                     estudiante[i].promediar();
                 }
-
+                notasIngresadas = true;
             }else{
                 MessageBeep(MB_ICONHAND);
                 cout << "\n========================================================================================" << endl;
@@ -214,82 +232,101 @@ void menu(){
             break;
         }
         case 4:
-             cout << "\n========================================================================================" << endl;
-            cout << "                 UNIDAD EDUCATIVA GOTITAS DEL SABER" << endl;
-            cout << "                 REPORTE DE CALIFICACIONES" << endl;
-            cout << "PERIODO: Mayo 2024 - Septiembre 2024" << endl;
-            cout << "Materia: " << materia.nombre<<endl;
-            cout << "NRC: " << materia.NRC<<endl;
-            cout<<"Nombre"<<"\t\t"<<"Apellido"<<"\t";
+            if(notasIngresadas){
+                cout << "\n========================================================================================" << endl;
+                cout << "                 UNIDAD EDUCATIVA GOTITAS DEL SABER" << endl;
+                cout << "                 REPORTE DE CALIFICACIONES" << endl;
+                cout << "PERIODO: Mayo 2024 - Septiembre 2024" << endl;
+                cout << "Materia: " << materia.nombre<<endl;
+                cout << "NRC: " << materia.NRC<<endl;
+                cout<<"Nombre"<<"\t\t"<<"Apellido"<<"\t";
 
-            for (int i = 1; i < numEstudiantes; i++) {
-                cout<<"N"<<i<<"\t";
+                for (int i = 1; i < numEstudiantes; i++) {
+                    cout<<"N"<<i<<"\t";
 
-            }
-            cout<<"Promedio"<<endl;
-            for (int i = 0; i < numEstudiantes; i++) {
-                estudiante[i].imprimirDatos();
+                }
+                cout<<"Promedio"<<endl;
+                for (int i = 0; i < numEstudiantes; i++) {
+                    estudiante[i].imprimirDatos();
+                }
+            }else{
+                MessageBeep(MB_ICONHAND);
+                cout << "\n========================================================================================" << endl;
+                cout << "Aun no se han registrado calificaciones dentro del sistema, por favor registre los datos" << endl;
+                cout << "========================================================================================" << endl;
             }
             break;
         case 5:{
-           metodoOrdenacion = escogerMetodoOrdenacion();
-            switch (metodoOrdenacion) {
-            case 1:
-                cout << "Método de Intercambio Simple seleccionado." << endl;
-                // Poner función de Intercambio Simple aquí
-                break;
-            case 2:
-                cout << "Método de Selección seleccionado." << endl;
-                //  Poner función de Selección aquí
-                break;
-            case 3:
-                cout << "Método de Burbuja seleccionado." << endl;
-                //  Poner función de Burbuja aquí
-                break;
-            case 4:
-                cout << "Método de Quicksort seleccionado." << endl;
-                //  Poner función de Quicksort aquí
-                break;
-            case 5:
-                cout << "Método de Shellsort seleccionado." << endl;
-                //  Poner función de Shellsort aquí
-                break;
-            case 6:
-                cout << "Método de BucketSort seleccionado." << endl;
-                //  Poner función de BucketSort aquí
-                break;
-            case 7:
-                cout << "Método de Radixsort seleccionado." << endl;
-                //  Poner función de Radixsort aquí
-                break;
-            case 8:
-                cout <<"regresando al menu"<<endl;
-                break;
+            if(notasIngresadas){
+                metodoOrdenacion = escogerMetodoOrdenacion();
+                switch (metodoOrdenacion) {
+                case 1:
+                    cout << "Método de Intercambio Simple seleccionado." << endl;
+                    // Poner función de Intercambio Simple aquí
+                    break;
+                case 2:
+                    cout << "Método de Selección seleccionado." << endl;
+                    //  Poner función de Selección aquí
+                    break;
+                case 3:
+                    cout << "Método de Burbuja seleccionado." << endl;
+                    //  Poner función de Burbuja aquí
+                    break;
+                case 4:
+                    cout << "Método de Quicksort seleccionado." << endl;
+                    //  Poner función de Quicksort aquí
+                    break;
+                case 5:
+                    cout << "Método de Shellsort seleccionado." << endl;
+                    //  Poner función de Shellsort aquí
+                    break;
+                case 6:
+                    cout << "Método de BucketSort seleccionado." << endl;
+                    //  Poner función de BucketSort aquí
+                    break;
+                case 7:
+                    cout << "Método de Radixsort seleccionado." << endl;
+                    //  Poner función de Radixsort aquí
+                    break;
+                case 8:
+                    cout <<"regresando al menu"<<endl;
+                    break;
+                }
+            }else{
+                MessageBeep(MB_ICONHAND);
+                cout << "\n========================================================================================" << endl;
+                cout << "Aun no se han registrado calificaciones dentro del sistema, por favor registre los datos" << endl;
+                cout << "========================================================================================" << endl;
             }
             break;
         case 6:
-
-            metodoBusqueda = escogerMetodoBusqueda();
-            switch (metodoBusqueda) {
-            case 1:
-                cout << "Método de Búsqueda Lineal seleccionado." << endl;
-                //funcion
-                break;
-            case 2:
-                cout << "Método de Búsqueda Binaria seleccionado." << endl;
-                //fucion
-                break;
-            case 3:
-                cout << "Método de Búsqueda Hash seleccionado." << endl;
-                //funcion
-                break;
-            case 4:
-                cout << "Regresando al menú principal." << endl;
-                break;
+            if(notasIngresadas){
+                metodoBusqueda = escogerMetodoBusqueda();
+                switch (metodoBusqueda) {
+                case 1:
+                    cout << "Método de Búsqueda Lineal seleccionado." << endl;
+                    //funcion
+                    break;
+                case 2:
+                    cout << "Método de Búsqueda Binaria seleccionado." << endl;
+                    //fucion
+                    break;
+                case 3:
+                    cout << "Método de Búsqueda Hash seleccionado." << endl;
+                    //funcion
+                    break;
+                case 4:
+                    cout << "Regresando al menú principal." << endl;
+                    break;
+                }
+            }else{
+                MessageBeep(MB_ICONHAND);
+                cout << "\n========================================================================================" << endl;
+                cout << "Aun no se han registrado calificaciones dentro del sistema, por favor registre los datos" << endl;
+                cout << "========================================================================================" << endl;
             }
             break;
         case 7:
-
             salir = true;
             break;
         }
@@ -303,7 +340,6 @@ void menu(){
 int main(){
 
     menuBienvenida();
-
     menu();
 
    return 0;

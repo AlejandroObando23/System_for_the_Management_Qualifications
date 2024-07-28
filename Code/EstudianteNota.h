@@ -38,12 +38,17 @@ public:
         promedio = suma/N;
     }
 
+    double getPromedio(){
+        return promedio;
+    }
+
     void imprimirDatos(){
 
         cout <<"Alumno: " << nombre << " " <<apellido << endl;
         for(int i = 0; i<N; i++){
             cout <<"Nota " << i+1 << ": " << notas[i] << endl;
         }
+        cout << "Promedio: " <<  promedio << endl;
 
     }
 };

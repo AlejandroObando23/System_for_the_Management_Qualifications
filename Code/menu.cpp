@@ -3,6 +3,7 @@
 #include <cctype>
 #include <windows.h>
 #include "EstudianteNota.h"
+#include "Ordenamientos.h"
 #define ANSI_BACKGROUND_BLUE "\033[44m"
 #define ANSI_BACKGROUND_RESET "\033[0m"
 using namespace std;
@@ -42,7 +43,7 @@ void mostrarMenuPrincipal(int opcionActual) {
     mostrarInformacionMateria();
     cout << "\n\tSeleccione una opción:\n" << endl;
     cout << "\t╔══════════════════════════════════╗" << endl;
-    for (int i = 1; i <= 6; i++) {
+    for (int i = 1; i <= 7; i++) {
         if (i == opcionActual) {
             printf("%s", ANSI_BACKGROUND_BLUE);
         } else {
@@ -61,13 +62,16 @@ void mostrarMenuPrincipal(int opcionActual) {
             cout << "3. Ingreso de notas por estud.   ";
             break;
         case 4:
-            cout << "4. Ordenamiento                  ";
+            cout << "5. ver notas                     ";
             break;
         case 5:
-            cout << "5. Búsqueda                      ";
+            cout << "5. Ordenamiento                  ";
             break;
         case 6:
-            cout << "6. Salir                         ";
+            cout << "6. Búsqueda                      ";
+            break;
+        case 7:
+            cout << "7. Salir                         ";
             break;
         }
         cout << "║" << endl;
@@ -128,6 +132,7 @@ void menu(){
     int opcion,metodoOrdenacion,metodoBusqueda;
     int numEstudiantes=-1, numNotas=-1;
     Estudiante *estudiante;
+    Estudiante *estudiantesOrdenados;
 
     do
     {
@@ -196,8 +201,8 @@ void menu(){
                             }
                         }
                         }while(N == 0);
-
                     }
+                    estudiante[i].promediar();
                 }
 
             }else{
@@ -206,11 +211,10 @@ void menu(){
                 cout << "Por favor Ingrese la información de #alumnos y notas o registre correctamente la materia" << endl;
                 cout << "========================================================================================" << endl;
             }
-
-
             break;
         }
         case 4:
+<<<<<<< HEAD
             metodoOrdenacion = escogerMetodoOrdenacion();
             switch (metodoOrdenacion) {
             case 1:
@@ -265,11 +269,25 @@ void menu(){
                 break;
             }
             break;
+=======
+            for(int i = 0; i< numEstudiantes; i++){
+                cout << "\n=== Estudiante #" << i+1 << "===" << endl;
+                estudiante[i].imprimirDatos();
+            }
+            break;
+        case 5:
+            estudiantesOrdenados = estudiante;
+            ordenamientoIntercambio(estudiantesOrdenados, numEstudiantes);
+
+            for(int i = 0; i< numEstudiantes; i++){
+                cout << "\n=== Estudiante #" << i+1 << "===" << endl;
+                estudiantesOrdenados[i].imprimirDatos();
+            }
+>>>>>>> d7d36d836cb67814db01baa83fe80b515af22bf9
             break;
         case 6:
-            cout<<"Saliendo del programa....";
+            break;
         case 7:
-
             salir = true;
             break;
         }

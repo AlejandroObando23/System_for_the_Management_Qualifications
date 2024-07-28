@@ -14,6 +14,9 @@ struct Materia{
 
 Materia materia;
 void menuBienvenida();
+void mostrarInformacionMateria();
+int escogerMetodoOrdenacion();
+int escogerMetodoBusqueda();
 
 int validarNumero(char numero[])
 {
@@ -36,8 +39,7 @@ int validarNumero(char numero[])
 void mostrarMenuPrincipal(int opcionActual) {
 
     SetConsoleOutputCP(CP_UTF8);
-    cout << "\tMateria:" << materia.nombre << endl;
-    cout << "\tNRC:\t" << materia.NRC << endl;
+    mostrarInformacionMateria();
     cout << "\n\tSeleccione una opción:\n" << endl;
     cout << "\t╔══════════════════════════════════╗" << endl;
     for (int i = 1; i <= 6; i++) {
@@ -123,7 +125,7 @@ int escogerOpcion()
 void menu(){
 
     bool salir = false;
-    int opcion, op, op1;
+    int opcion,metodoOrdenacion,metodoBusqueda;
     int numEstudiantes=-1, numNotas=-1;
     Estudiante *estudiante;
 
@@ -140,7 +142,8 @@ void menu(){
             cout << "\nIngrese el NRC: ";
             cin>> materia.NRC;
             cout <<"\nIngrese la materia: ";
-            cin>> materia.nombre;
+            cin.ignore();
+            getline(cin, materia.nombre);
 
             break;
         case 2:
@@ -154,7 +157,7 @@ void menu(){
             estudiante = new Estudiante[numEstudiantes];
             break;
         case 3:{
-            if((materia.NRC != "- aun no ingresado -") && (numNotas != -1)){
+            if((materia.NRC != " ") && (numNotas != -1)){
                 cout<<"═════════════════════════════════════════" << endl;
                 cout << "\tINGRESO de notas por estudiante" << endl;
                 cout<<"═════════════════════════════════════════" << endl;
@@ -208,10 +211,60 @@ void menu(){
             break;
         }
         case 4:
-     cout<<"Hola";
+            metodoOrdenacion = escogerMetodoOrdenacion();
+            switch (metodoOrdenacion) {
+            case 1:
+                cout << "Método de Intercambio Simple seleccionado." << endl;
+                // Poner función de Intercambio Simple aquí
+                break;
+            case 2:
+                cout << "Método de Selección seleccionado." << endl;
+                //  Poner función de Selección aquí
+                break;
+            case 3:
+                cout << "Método de Burbuja seleccionado." << endl;
+                //  Poner función de Burbuja aquí
+                break;
+            case 4:
+                cout << "Método de Quicksort seleccionado." << endl;
+                //  Poner función de Quicksort aquí
+                break;
+            case 5:
+                cout << "Método de Shellsort seleccionado." << endl;
+                //  Poner función de Shellsort aquí
+                break;
+            case 6:
+                cout << "Método de BucketSort seleccionado." << endl;
+                //  Poner función de BucketSort aquí
+                break;
+            case 7:
+                cout << "Método de Radixsort seleccionado." << endl;
+                //  Poner función de Radixsort aquí
+                break;
+            case 8:
+                break;
+            }
             break;
         case 5:
-        cout<<"Hola";
+        metodoBusqueda = escogerMetodoBusqueda();
+            switch (metodoBusqueda) {
+            case 1:
+                cout << "Método de Búsqueda Lineal seleccionado." << endl;
+                //funcion
+                break;
+            case 2:
+                cout << "Método de Búsqueda Binaria seleccionado." << endl;
+                //fucion
+                break;
+            case 3:
+                cout << "Método de Búsqueda Hash seleccionado." << endl;
+                //funcion
+                break;
+            case 4:
+                cout << "Regresando al menú principal." << endl;
+                break;
+            }
+            break;
             break;
         case 6:
             cout<<"Saliendo del programa....";
@@ -227,10 +280,9 @@ void menu(){
 
 }
 int main(){
-    materia.nombre = "- aun no ingresado -";
-    materia.NRC = "- aun no ingresado -";
 
     menuBienvenida();
+
     menu();
 
    return 0;
@@ -299,5 +351,131 @@ void menuBienvenida() {
     }
 }
 
+void mostrarMenuOrdenacion(int opcionActual) {
+    SetConsoleOutputCP(CP_UTF8);
+    cout << "\t----ALGORITMOS DE ORDENACION----\n" << endl;
+    cout << "\t╔═══════════════════════════════════╗" << endl;
+    for (int i = 1; i <= 8; i++) {
+        if (i == opcionActual) {
+            printf("%s", ANSI_BACKGROUND_BLUE);
+        } else {
+            printf("%s", ANSI_BACKGROUND_RESET);
+        }
 
+        cout << "\t║ ";
+        switch (i) {
+        case 1:
+            cout << "1. Intercambio Simple             ";
+            break;
+        case 2:
+            cout << "2. Seleccion                      ";
+            break;
+        case 3:
+            cout << "3. Burbuja                        ";
+            break;
+        case 4:
+            cout << "4. Quicksort                      ";
+            break;
+        case 5:
+            cout << "5. Shellsort                      ";
+            break;
+        case 6:
+            cout << "6. BucketSort                     ";
+            break;
+        case 7:
+            cout << "7. Radixsort                      ";
+            break;
+        case 8:
+            cout << "8. Regresar                       ";
+            break;
+        }
+        cout << "║" << endl;
+    }
+    printf("%s", ANSI_BACKGROUND_RESET);
+    cout << "\t╚═══════════════════════════════════╝" << endl;
+}
+
+int escogerMetodoOrdenacion() {
+    int opcionActual = 1;
+    while (1) {
+        system("cls");
+        mostrarMenuOrdenacion(opcionActual);
+        char tecla = _getch();
+        switch (tecla) {
+        case 72:
+            opcionActual = (opcionActual > 1) ? opcionActual - 1 : 8;
+            break;
+        case 80:
+            opcionActual = (opcionActual < 8) ? opcionActual + 1 : 1;
+            break;
+        case 13:
+            system("cls");
+            return opcionActual;
+        }
+    }
+}
+
+void mostrarInformacionMateria() {
+     SetConsoleOutputCP(CP_UTF8);
+    cout << "\t╔═════════════════════════════════════════╗" << endl;
+    cout << "\t║ Materia: " << materia.nombre;
+    for (int i = 0; i < 31 - materia.nombre.length(); ++i) cout << " ";
+    cout << "║" << endl;
+    cout << "\t║ NRC: " << materia.NRC;
+    for (int i = 0; i < 35 - materia.NRC.length(); ++i) cout << " ";
+    cout << "║" << endl;
+    cout << "\t╚═════════════════════════════════════════╝" << endl;
+}
+
+void mostrarMenuBusqueda(int opcionActual) {
+    SetConsoleOutputCP(CP_UTF8);
+    cout << "\t----MÉTODOS DE BÚSQUEDA----\n" << endl;
+    cout << "\t╔═══════════════════════════════════╗" << endl;
+    for (int i = 1; i <= 4; i++) {
+        if (i == opcionActual) {
+            printf("%s", ANSI_BACKGROUND_BLUE);
+        } else {
+            printf("%s", ANSI_BACKGROUND_RESET);
+        }
+
+        cout << "\t║ ";
+        switch (i) {
+        case 1:
+            cout << "1. Búsqueda Lineal                ";
+            break;
+        case 2:
+            cout << "2. Búsqueda Binaria               ";
+            break;
+        case 3:
+            cout << "3. Búsqueda Hash                  ";
+            break;
+        case 4:
+            cout << "4. Regresar                       ";
+            break;
+        }
+        cout << "║" << endl;
+    }
+    printf("%s", ANSI_BACKGROUND_RESET);
+    cout << "\t╚═══════════════════════════════════╝" << endl;
+}
+
+int escogerMetodoBusqueda() {
+    int opcionActual = 1;
+    while (1) {
+        system("cls");
+        mostrarMenuBusqueda(opcionActual);
+        char tecla = _getch();
+        switch (tecla) {
+        case 72:
+            opcionActual = (opcionActual > 1) ? opcionActual - 1 : 4;
+            break;
+        case 80:
+            opcionActual = (opcionActual < 4) ? opcionActual + 1 : 1;
+            break;
+        case 13:
+            system("cls");
+            return opcionActual;
+        }
+    }
+}
 

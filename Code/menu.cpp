@@ -9,7 +9,8 @@
 #define ANSI_BACKGROUND_RESET "\033[0m"
 using namespace std;
 
-struct Materia{
+struct Materia
+{
     string nombre;
     string NRC;
 };
@@ -50,21 +51,27 @@ int validarNumero(char numero[])
     return 1;
 }
 
-void mostrarMenuPrincipal(int opcionActual) {
+void mostrarMenuPrincipal(int opcionActual)
+{
 
     SetConsoleOutputCP(CP_UTF8);
     mostrarInformacionMateria();
     cout << "\n\tSeleccione una opción:\n" << endl;
     cout << "\t╔══════════════════════════════════╗" << endl;
-    for (int i = 1; i <= 7; i++) {
-        if (i == opcionActual) {
+    for (int i = 1; i <= 7; i++)
+    {
+        if (i == opcionActual)
+        {
             printf("%s", ANSI_BACKGROUND_BLUE);
-        } else {
+        }
+        else
+        {
             printf("%s", ANSI_BACKGROUND_RESET);
         }
 
         cout << "\t║ ";
-        switch (i) {
+        switch (i)
+        {
         case 1:
             cout << "1. Ingresar Materia y Nrc        ";
             break;
@@ -139,7 +146,8 @@ int escogerOpcion()
         }
     }
 }
-void menu(){
+void menu()
+{
 
     bool salir = false, notasIngresadas = false;
     int opcion,metodoOrdenacion,metodoBusqueda;
@@ -152,23 +160,29 @@ void menu(){
 
         switch(opcion)
         {
-        case 1:{
+        case 1:
+        {
             cout<<"═════════════════════════════════" << endl;
             cout << "\tINGRESO MATERIA Y NRC" << endl;
             cout<<"═════════════════════════════════" << endl;
 
             char validar[10];
             int N;
-            do{
+            do
+            {
                 cout << "\nIngrese el NRC: ";
                 cin>> validar;
                 N = validarNumero(validar);
-                if(N == 1){
+                if(N == 1)
+                {
                     materia.NRC = validar;
-                }else{
+                }
+                else
+                {
                     MessageBeep(MB_ICONHAND);
                 }
-            }while(N == 0);
+            }
+            while(N == 0);
             cout <<"\nIngrese la materia: ";
             cin.ignore();
             getline(cin, materia.nombre);
@@ -176,7 +190,8 @@ void menu(){
             break;
         }
         case 2:
-            if(materia.NRC != ""){
+            if(materia.NRC != "")
+            {
                 cout<<"═════════════════════════════════" << endl;
                 cout << "\tINGRESO #Estudiantes y #Notas" << endl;
                 cout<<"═════════════════════════════════" << endl;
@@ -185,57 +200,99 @@ void menu(){
                 cout <<"\nCuantas notas por estudiante: ";
                 cin >> numNotas;
                 estudiante = new Estudiante[numEstudiantes];
-            }else{
+            }
+            else
+            {
                 MessageBeep(MB_ICONHAND);
                 cout << "\n========================================================================================" << endl;
                 cout << "Por favor Ingrese la materia y el NRC correspondientes" << endl;
                 cout << "========================================================================================" << endl;
             }
             break;
-        case 3:{
-            if((materia.NRC != "") && (numNotas != -1)){
+        case 3:
+        {
+            if((materia.NRC != "") && (numNotas != -1))
+            {
                 cout<<"═════════════════════════════════════════" << endl;
                 cout << "\tINGRESO de notas por estudiante" << endl;
                 cout<<"═════════════════════════════════════════" << endl;
 
-                for(int i=0; i< numEstudiantes;i++){
+                for(int i=0; i< numEstudiantes; i++)
+                {
                     estudiante[i].setNotas(numNotas);
                     fflush(stdin);
                     string nombre, apellido;
                     cout << "\n=== ESTUDIANTE #" << i+1 << " ==="<< endl;
-                    cout << "Ingrese el nombre del estudiante: ";
-                    cin >> nombre;
+
+                    while (true)
+                    {
+                        cout << "Ingrese el nombre del estudiante: ";
+                        cin >> nombre ;
+
+
+
+                        if (esSoloLetras(nombre))
+                        {
+                            break;
+                        }
+                        else
+                        {
+                            cout << "La entrada contiene caracteres no permitidos (Numeros). Porfavor ingrese correctamente su nombre" << endl;
+                        }
+                    }
+
                     estudiante[i].setNombre(nombre);
-                    cout << "Ingrese el apellido del estudiante:";
-                    cin >> apellido;
+
+                    while (true)
+                    {
+                        cout << "Ingrese el apellido del estudiante:";
+                        cin >> apellido ;
+                        if (esSoloLetras(apellido))
+                        {
+                            break;
+                        }
+                        else
+                        {
+                            cout << "La entrada contiene caracteres no permitidos (Numeros). Porfavor ingrese correctamente su apellido" << endl;
+                        }
+                    }
                     estudiante[i].setApellido(apellido);
                     cout << endl;
-                    for(int j = 0; j< numNotas; j++){
+                    for(int j = 0; j< numNotas; j++)
+                    {
                         fflush(stdin);
                         char validar[5];
                         int N;
                         double nota;
-                        do{
-                        cout << "Ingrese la nota #" << j+1 << ": ";
-                        cin >> validar;
-                        N=validarNumero(validar);
+                        do
+                        {
+                            cout << "Ingrese la nota #" << j+1 << ": ";
+                            cin >> validar;
+                            N=validarNumero(validar);
 
-                        if( N != 0){
-                            nota = atof(validar);
-                            if((nota>= 0) && (nota <=20)){
-                                estudiante[i].ingresoNota(j,nota);
-                            }else{
-                                N = 0;
-                                cout << "==== Ingrese una nota entre 0 y 20 ====" << endl;
-                                MessageBeep(MB_ICONHAND);
+                            if( N != 0)
+                            {
+                                nota = atof(validar);
+                                if((nota>= 0) && (nota <=20))
+                                {
+                                    estudiante[i].ingresoNota(j,nota);
+                                }
+                                else
+                                {
+                                    N = 0;
+                                    cout << "==== Ingrese una nota entre 0 y 20 ====" << endl;
+                                    MessageBeep(MB_ICONHAND);
+                                }
                             }
                         }
-                        }while(N == 0);
+                        while(N == 0);
                     }
                     estudiante[i].promediar();
                 }
                 notasIngresadas = true;
-            }else{
+            }
+            else
+            {
                 MessageBeep(MB_ICONHAND);
                 cout << "\n========================================================================================" << endl;
                 cout << "Por favor Ingrese la información de #alumnos y notas o registre correctamente la materia" << endl;
@@ -244,7 +301,8 @@ void menu(){
             break;
         }
         case 4:
-            if(notasIngresadas){
+            if(notasIngresadas)
+            {
                 cout << "\n========================================================================================" << endl;
                 cout << "                 UNIDAD EDUCATIVA GOTITAS DEL SABER" << endl;
                 cout << "                 REPORTE DE CALIFICACIONES" << endl;
@@ -253,29 +311,37 @@ void menu(){
                 cout << "NRC: " << materia.NRC<<endl;
                 cout<<"Nombre"<<"\t\t"<<"Apellido"<<"\t";
 
-                for (int i = 1; i <= numNotas; i++) {
+                for (int i = 1; i <= numNotas; i++)
+                {
                     cout<<"N"<<i<<"\t";
                 }
                 cout<<"Promedio\n"<<endl;
-                for (int i = 0; i < numEstudiantes; i++) {
+                for (int i = 0; i < numEstudiantes; i++)
+                {
                     estudiante[i].imprimirDatos();
                 }
-            }else{
+            }
+            else
+            {
                 MessageBeep(MB_ICONHAND);
                 cout << "\n========================================================================================" << endl;
                 cout << "Aun no se han registrado calificaciones dentro del sistema, por favor registre los datos" << endl;
                 cout << "========================================================================================" << endl;
             }
             break;
-        case 5:{
+        case 5:
+        {
             bool regresar = false;
-            if(notasIngresadas){
+            if(notasIngresadas)
+            {
                 Estudiante estudiantesOrdenados[numEstudiantes];
-                for(int i =0; i< numEstudiantes; i++){
+                for(int i =0; i< numEstudiantes; i++)
+                {
                     estudiantesOrdenados[i]=estudiante[i];
                 }
                 metodoOrdenacion = escogerMetodoOrdenacion();
-                switch (metodoOrdenacion) {
+                switch (metodoOrdenacion)
+                {
                 case 1:
                     cout << "Método de Intercambio Simple seleccionado." << endl;
                     ordenamientoIntercambio(estudiantesOrdenados, numEstudiantes);
@@ -310,20 +376,25 @@ void menu(){
                     break;
                 }
 
-                if(!regresar){
+                if(!regresar)
+                {
                     cout << "Los datos ordenados son: " << endl;
                     cout<<"Nombre"<<"\t\t"<<"Apellido"<<"\t";
 
-                    for (int i = 1; i <= numNotas; i++) {
+                    for (int i = 1; i <= numNotas; i++)
+                    {
                         cout<<"N"<<i<<"\t";
 
                     }
                     cout<<"Promedio\n"<<endl;
-                    for (int i = 0; i < numEstudiantes; i++) {
+                    for (int i = 0; i < numEstudiantes; i++)
+                    {
                         estudiantesOrdenados[i].imprimirDatos();
                     }
                 }
-            }else{
+            }
+            else
+            {
                 MessageBeep(MB_ICONHAND);
                 cout << "\n========================================================================================" << endl;
                 cout << "Aun no se han registrado calificaciones dentro del sistema, por favor registre los datos" << endl;
@@ -331,18 +402,21 @@ void menu(){
             }
             break;
         }
-        case 6:{
+        case 6:
+        {
             tablaHash<Estudiante> tabla(numEstudiantes + 1);
             double calificacion;
             int index;
             Estudiante estudianteEncontrado;
 
-            if(notasIngresadas){
+            if(notasIngresadas)
+            {
                 metodoBusqueda = escogerMetodoBusqueda();
                 cout << "Ingrese el promedio que desea buscar: ";
                 cin >> calificacion;
 
-                switch (metodoBusqueda) {
+                switch (metodoBusqueda)
+                {
                 case 1:
                     cout << "Método de Búsqueda Lineal seleccionado." << endl;
                     //funcion
@@ -371,7 +445,9 @@ void menu(){
                 cout << "index: " << index << endl;
 
 
-            }else{
+            }
+            else
+            {
                 MessageBeep(MB_ICONHAND);
                 cout << "\n========================================================================================" << endl;
                 cout << "Aun no se han registrado calificaciones dentro del sistema, por favor registre los datos" << endl;
@@ -383,38 +459,47 @@ void menu(){
             salir = true;
             break;
         }
-    system("pause");
-   }while(!salir);
+        system("pause");
+    }
+    while(!salir);
 
 
 }
 
-int main(){
+int main()
+{
 
     menuBienvenida();
     menu();
 
-   return 0;
+    return 0;
 
 }
 
 
-bool validarCedula(const string& cedula) {
-    if (cedula.length() != 10) {
+bool validarCedula(const string& cedula)
+{
+    if (cedula.length() != 10)
+    {
         return false;
     }
-    for (char c : cedula) {
-        if (!isdigit(c)) {
+    for (char c : cedula)
+    {
+        if (!isdigit(c))
+        {
             return false;
         }
     }
 
     int suma =0;
-    for(int i =0; i<9; i++){
+    for(int i =0; i<9; i++)
+    {
         int digito = cedula[i]- '0';
-        if(i%2==0){
+        if(i%2==0)
+        {
             digito*=2;
-            if(digito>9){
+            if(digito>9)
+            {
                 digito-=9;
             }
         }
@@ -422,15 +507,19 @@ bool validarCedula(const string& cedula) {
     }
     int verificar = cedula[9]- '0';
     int ultimodigito;
-    if (suma % 10 == 0){
+    if (suma % 10 == 0)
+    {
         ultimodigito =0;
-    }else {
+    }
+    else
+    {
         ultimodigito = 10 - (suma % 10);
     }
     return ultimodigito == verificar;
 }
 
-void menuBienvenida() {
+void menuBienvenida()
+{
     string nombre;
     string cedula;
     SetConsoleOutputCP(CP_UTF8);
@@ -442,7 +531,7 @@ void menuBienvenida() {
     cout << "║                                   ║\n";
     cout << "╚═══════════════════════════════════╝\n";
     cout << "Por favor, ingrese sus datos" <<endl;
-while (true)
+    while (true)
     {
         cout << "\nIngrese su nombre: ";
         cin >> nombre ;
@@ -462,34 +551,44 @@ while (true)
 
     fflush(stdin);
     fflush(stdin);
-    while (true) {
+    while (true)
+    {
         cout << "Ingrese su cédula: ";
         cin >> cedula;
 
-        if (validarCedula(cedula)) {
+        if (validarCedula(cedula))
+        {
             cout << "Acceso concedido.\n";
             system("cls");
             break;
-        } else {
+        }
+        else
+        {
             MessageBeep(MB_ICONHAND);
             cout << "Cédula no válida. Debe ingresar una cedula correcta.\n";
         }
     }
 }
 
-void mostrarMenuOrdenacion(int opcionActual) {
+void mostrarMenuOrdenacion(int opcionActual)
+{
     SetConsoleOutputCP(CP_UTF8);
     cout << "\t----ALGORITMOS DE ORDENACION----\n" << endl;
     cout << "\t╔═══════════════════════════════════╗" << endl;
-    for (int i = 1; i <= 8; i++) {
-        if (i == opcionActual) {
+    for (int i = 1; i <= 8; i++)
+    {
+        if (i == opcionActual)
+        {
             printf("%s", ANSI_BACKGROUND_BLUE);
-        } else {
+        }
+        else
+        {
             printf("%s", ANSI_BACKGROUND_RESET);
         }
 
         cout << "\t║ ";
-        switch (i) {
+        switch (i)
+        {
         case 1:
             cout << "1. Intercambio Simple             ";
             break;
@@ -521,13 +620,16 @@ void mostrarMenuOrdenacion(int opcionActual) {
     cout << "\t╚═══════════════════════════════════╝" << endl;
 }
 
-int escogerMetodoOrdenacion() {
+int escogerMetodoOrdenacion()
+{
     int opcionActual = 1;
-    while (1) {
+    while (1)
+    {
         system("cls");
         mostrarMenuOrdenacion(opcionActual);
         char tecla = _getch();
-        switch (tecla) {
+        switch (tecla)
+        {
         case 72:
             opcionActual = (opcionActual > 1) ? opcionActual - 1 : 8;
             break;
@@ -541,8 +643,9 @@ int escogerMetodoOrdenacion() {
     }
 }
 
-void mostrarInformacionMateria() {
-     SetConsoleOutputCP(CP_UTF8);
+void mostrarInformacionMateria()
+{
+    SetConsoleOutputCP(CP_UTF8);
     cout << "\t╔═════════════════════════════════════════╗" << endl;
     cout << "\t║ Materia: " << materia.nombre;
     for (int i = 0; i < 31 - materia.nombre.length(); ++i) cout << " ";
@@ -553,19 +656,25 @@ void mostrarInformacionMateria() {
     cout << "\t╚═════════════════════════════════════════╝" << endl;
 }
 
-void mostrarMenuBusqueda(int opcionActual) {
+void mostrarMenuBusqueda(int opcionActual)
+{
     SetConsoleOutputCP(CP_UTF8);
     cout << "\t----MÉTODOS DE BÚSQUEDA----\n" << endl;
     cout << "\t╔═══════════════════════════════════╗" << endl;
-    for (int i = 1; i <= 4; i++) {
-        if (i == opcionActual) {
+    for (int i = 1; i <= 4; i++)
+    {
+        if (i == opcionActual)
+        {
             printf("%s", ANSI_BACKGROUND_BLUE);
-        } else {
+        }
+        else
+        {
             printf("%s", ANSI_BACKGROUND_RESET);
         }
 
         cout << "\t║ ";
-        switch (i) {
+        switch (i)
+        {
         case 1:
             cout << "1. Búsqueda Lineal                ";
             break;
@@ -585,13 +694,16 @@ void mostrarMenuBusqueda(int opcionActual) {
     cout << "\t╚═══════════════════════════════════╝" << endl;
 }
 
-int escogerMetodoBusqueda() {
+int escogerMetodoBusqueda()
+{
     int opcionActual = 1;
-    while (1) {
+    while (1)
+    {
         system("cls");
         mostrarMenuBusqueda(opcionActual);
         char tecla = _getch();
-        switch (tecla) {
+        switch (tecla)
+        {
         case 72:
             opcionActual = (opcionActual > 1) ? opcionActual - 1 : 4;
             break;

@@ -19,6 +19,7 @@ void menuBienvenida();
 void mostrarInformacionMateria();
 int escogerMetodoOrdenacion();
 int escogerMetodoBusqueda();
+int busquedaLineal(Estudiante arr[], int size, const Estudiante& key);
 
 int validarNumero(char numero[])
 {
@@ -332,31 +333,47 @@ void menu(){
 
                 switch (metodoBusqueda) {
                 case 1:
-                    cout << "Método de Búsqueda Lineal seleccionado." << endl;
-                    //funcion
-                    break;
+                    {
+                        cout << "Método de Búsqueda Lineal seleccionado." << endl;
+                        int index = busquedaLineal(estudiante, numEstudiantes, calificacion);
+                        if (index != -1) {
+                            Estudiante estudianteEncontrado = estudiante[index];
+                            cout << "La calificación a buscar fue de " << calificacion << ": " << endl;
+                            cout << "\nCorresponde al estudiante: " << endl;
+                            cout << "Alumno: " << estudianteEncontrado.getNombre() << " " << estudianteEncontrado.getApellido() << endl;
+                            cout << "Promedio: " << estudianteEncontrado.getPromedio() << endl;
+                        } else {
+                            cout << "Calificación no encontrada." << endl;
+                        }
+                        break;
+                    }
+
                 case 2:
                     cout << "Método de Búsqueda Binaria seleccionado." << endl;
                     //fucion
                     break;
                 case 3:
+                 {
                     cout << "Método de Búsqueda Hash seleccionado." << endl;
                     tabla.crearTabla();
                     tabla.insertarElementos(estudiante);
                     index = tabla.buscarElementos(calificacion);
-                    estudianteEncontrado = tabla.recuperarElemento(index);
-
+                    if (index != -1) {
+                        estudianteEncontrado = tabla.recuperarElemento(index);
+                        cout << "La calificación a buscar fue de " << calificacion << ": " << endl;
+                        cout << "\nCorresponde al estudiante: " << endl;
+                        cout << "Alumno: " << estudianteEncontrado.getNombre() << " " << estudianteEncontrado.getApellido() << endl;
+                        cout << "Promedio: " << estudianteEncontrado.getPromedio() << endl;
+                        cout << "index: " << index << endl;
+                    } else {
+                        cout << "Calificación no encontrada." << endl;
+                    }
                     break;
+                }
                 case 4:
                     cout << "Regresando al menú principal." << endl;
                     break;
                 }
-
-                cout << "La calificación a buscar fue de " << calificacion << ": " << endl;
-                cout << "\nCorresponde al estudiante: " << endl;
-                cout << "Alumno: " << estudianteEncontrado.getNombre() << " " << estudianteEncontrado.getApellido() << endl;
-                cout << "Promedio: " << estudianteEncontrado.getPromedio() << endl;
-                cout << "index: " << index << endl;
 
 
             }else{

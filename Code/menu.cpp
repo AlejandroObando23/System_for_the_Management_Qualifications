@@ -19,6 +19,18 @@ void menuBienvenida();
 void mostrarInformacionMateria();
 int escogerMetodoOrdenacion();
 int escogerMetodoBusqueda();
+bool esSoloLetras(const string& cadena)
+{
+    for (char c : cadena)
+    {
+        if (!isalpha(c))
+        {
+            return false;
+        }
+    }
+    return true;
+}
+
 
 int validarNumero(char numero[])
 {
@@ -430,8 +442,25 @@ void menuBienvenida() {
     cout << "║                                   ║\n";
     cout << "╚═══════════════════════════════════╝\n";
     cout << "Por favor, ingrese sus datos" <<endl;
-    cout << "\nIngrese su nombre: ";
-    cin >> nombre ;
+while (true)
+    {
+        cout << "\nIngrese su nombre: ";
+        cin >> nombre ;
+
+
+
+        if (esSoloLetras(nombre))
+        {
+            break;
+        }
+        else
+        {
+            cout << "La entrada contiene caracteres no permitidos. Porfavor ingrese correctamente su nombre" << endl;
+        }
+    }
+
+
+    fflush(stdin);
     fflush(stdin);
     while (true) {
         cout << "Ingrese su cédula: ";

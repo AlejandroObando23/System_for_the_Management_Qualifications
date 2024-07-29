@@ -382,6 +382,7 @@ void menu()
                     break;
                 case 6:
                     cout << "Método de BucketSort seleccionado." << endl;
+                    //bucketSort(estudiantesOrdenados, numEstudiantes, MAX);
 
                     break;
                 case 7:
@@ -389,6 +390,14 @@ void menu()
                     //ordenarRadix(estudiantesOrdenados, numEstudiantes);
                     break;
                 case 8:
+                    cout << "Método de Mezcla Directa seleccionado." << endl;
+                    //mezclaDirecta(estudiantesOrdenados, 0, numEstudiantes - 1);
+                    break;
+                case 9:
+                    cout << "Método de Mezcla Natural seleccionado." << endl;
+                    //mezclaNatural(estudiantesOrdenados, numEstudiantes);
+                    break;
+                case 10:
                     cout <<"regresando al menu"<<endl;
                     regresar =true;
                     break;
@@ -436,53 +445,62 @@ void menu()
                 switch (metodoBusqueda)
                 {
                 case 1:
+                {
+                    cout << "Método de Búsqueda Lineal seleccionado." << endl;
+                    int index = busquedaLineal(estudiante, numEstudiantes, calificacion);
+                    if (index != -1)
                     {
-                        cout << "Método de Búsqueda Lineal seleccionado." << endl;
-                        int index = busquedaLineal(estudiante, numEstudiantes, calificacion);
-                        if (index != -1) {
-                            Estudiante estudianteEncontrado = estudiante[index];
-                            cout << "La calificación a buscar fue de " << calificacion << ": " << endl;
-                            cout << "\nCorresponde al estudiante: " << endl;
-                            cout << "Alumno: " << estudianteEncontrado.getNombre() << " " << estudianteEncontrado.getApellido() << endl;
-                            cout << "Promedio: " << estudianteEncontrado.getPromedio() << endl;
-                        } else {
-                            cout << "Calificación no encontrada." << endl;
-                        }
-                        break;
+                        Estudiante estudianteEncontrado = estudiante[index];
+                        cout << "La calificación a buscar fue de " << calificacion << ": " << endl;
+                        cout << "\nCorresponde al estudiante: " << endl;
+                        cout << "Alumno: " << estudianteEncontrado.getNombre() << " " << estudianteEncontrado.getApellido() << endl;
+                        cout << "Promedio: " << estudianteEncontrado.getPromedio() << endl;
                     }
+                    else
+                    {
+                        cout << "Calificación no encontrada." << endl;
+                    }
+                    break;
+                }
 
                 case 2:
-                     {
-                        cout << "Método de Búsqueda Binaria seleccionado." << endl;
-                        ordenarPorPromedio(estudiante, numEstudiantes);
+                {
+                    cout << "Método de Búsqueda Binaria seleccionado." << endl;
+                    ordenarPorPromedio(estudiante, numEstudiantes);
 
-                        int indice = busquedaBinaria(estudiante, 0, numEstudiantes - 1, calificacion);
-                        if (indice != -1) {
-                            Estudiante estudianteEncontrado = estudiante[indice];
-                            cout << "La calificación a buscar fue de " << calificacion << ": " << endl;
-                            cout << "\nCorresponde al estudiante: " << endl;
-                            cout << "Alumno: " << estudianteEncontrado.getNombre() << " " << estudianteEncontrado.getApellido() << endl;
-                            cout << "Promedio: " << estudianteEncontrado.getPromedio() << endl;
-                        } else {
-                            cout << "Calificación no encontrada." << endl;
-                        }
-                        break;
+                    int indice = busquedaBinaria(estudiante, 0, numEstudiantes - 1, calificacion);
+                    if (indice != -1)
+                    {
+                        Estudiante estudianteEncontrado = estudiante[indice];
+                        cout << "La calificación a buscar fue de " << calificacion << ": " << endl;
+                        cout << "\nCorresponde al estudiante: " << endl;
+                        cout << "Alumno: " << estudianteEncontrado.getNombre() << " " << estudianteEncontrado.getApellido() << endl;
+                        cout << "Promedio: " << estudianteEncontrado.getPromedio() << endl;
                     }
+                    else
+                    {
+                        cout << "Calificación no encontrada." << endl;
+                    }
+                    break;
+                }
 
                 case 3:
-                 {
+                {
                     cout << "Método de Búsqueda Hash seleccionado." << endl;
                     tabla.crearTabla();
                     tabla.insertarElementos(estudiante);
                     index = tabla.buscarElementos(calificacion);
-                    if (index != -1) {
+                    if (index != -1)
+                    {
                         estudianteEncontrado = tabla.recuperarElemento(index);
                         cout << "La calificación a buscar fue de " << calificacion << ": " << endl;
                         cout << "\nCorresponde al estudiante: " << endl;
                         cout << "Alumno: " << estudianteEncontrado.getNombre() << " " << estudianteEncontrado.getApellido() << endl;
                         cout << "Promedio: " << estudianteEncontrado.getPromedio() << endl;
                         cout << "index: " << index << endl;
-                    } else {
+                    }
+                    else
+                    {
                         cout << "Calificación no encontrada." << endl;
                     }
                     break;
@@ -623,7 +641,7 @@ void mostrarMenuOrdenacion(int opcionActual)
     SetConsoleOutputCP(CP_UTF8);
     cout << "\t----ALGORITMOS DE ORDENACION----\n" << endl;
     cout << "\t╔═══════════════════════════════════╗" << endl;
-    for (int i = 1; i <= 8; i++)
+    for (int i = 1; i <= 10; i++)
     {
         if (i == opcionActual)
         {
@@ -659,7 +677,13 @@ void mostrarMenuOrdenacion(int opcionActual)
             cout << "7. Radixsort                      ";
             break;
         case 8:
-            cout << "8. Regresar                       ";
+            cout << "8. Mezcla Directa                 ";
+            break;
+        case 9:
+            cout << "9. Mezcla Natural                 ";
+            break;
+        case 10:
+            cout << "10. Regresar                       ";
             break;
         }
         cout << "║" << endl;
@@ -679,10 +703,10 @@ int escogerMetodoOrdenacion()
         switch (tecla)
         {
         case 72:
-            opcionActual = (opcionActual > 1) ? opcionActual - 1 : 8;
+            opcionActual = (opcionActual > 1) ? opcionActual - 1 : 10;
             break;
         case 80:
-            opcionActual = (opcionActual < 8) ? opcionActual + 1 : 1;
+            opcionActual = (opcionActual < 10) ? opcionActual + 1 : 1;
             break;
         case 13:
             system("cls");

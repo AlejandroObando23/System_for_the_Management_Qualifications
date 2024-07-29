@@ -1,3 +1,6 @@
+#ifndef ORDENAMIENTOS_H
+#define ORDENAMIENTOS_H
+
 #include <iostream>
 const int MAX = 100;
 using namespace std;
@@ -5,9 +8,8 @@ using namespace std;
 template <typename T>
 void ordenamientoIntercambio(T a[], int n){
     T temp;
-
-    for(int i=0; i < n-1;i++){
-        for(int j=i+1; j< n; j++){
+    for(int i = 0; i < n-1; i++){
+        for(int j = i+1; j < n; j++){
             if(a[i].getPromedio() > a[j].getPromedio()){
                 temp = a[i];
                 a[i] = a[j];
@@ -21,10 +23,10 @@ template <typename T>
 void ordenamientoSeleccion(T a[], int n){
     int min;
     T aux;
-    for( int i=0; i<n; i++){
+    for(int i = 0; i < n; i++){
         min = i;
-        for(int j=i+1; j<n; j++){
-            if(a[j].getPromedio()<a[min].getPromedio()){
+        for(int j = i+1; j < n; j++){
+            if(a[j].getPromedio() < a[min].getPromedio()){
                 min = j;
             }
         }
@@ -37,12 +39,12 @@ void ordenamientoSeleccion(T a[], int n){
 template <typename T>
 void ordenamientoBurbuja(T a[], int n){
     T aux;
-    for(int i=0; i<n-1;i++){
-        for(int j=0; j<n-i-1; j++){
-            if(a[j].getPromedio()>a[j+1].getPromedio()){
+    for(int i = 0; i < n-1; i++){
+        for(int j = 0; j < n-i-1; j++){
+            if(a[j].getPromedio() > a[j+1].getPromedio()){
                 aux = a[j];
-                a[j]=a[j+1];
-                a[j+1]=aux;
+                a[j] = a[j+1];
+                a[j+1] = aux;
             }
         }
     }
@@ -55,21 +57,17 @@ void ordenamientoQuicksort(T a[], int primero, int ultimo){
         double pivote;
         T aux;
 
-        central = (primero + ultimo)/2;
+        central = (primero + ultimo) / 2;
         pivote = a[central].getPromedio();
 
         i = primero;
         j = ultimo;
 
         do{
-            while(a[i].getPromedio() < pivote){
-                i++;
-            }
-            while(a[j].getPromedio() > pivote){
-                j--;
-            }
+            while(a[i].getPromedio() < pivote) i++;
+            while(a[j].getPromedio() > pivote) j--;
 
-            if(i<=j){
+            if(i <= j){
                 aux = a[i];
                 a[i] = a[j];
                 a[j] = aux;
@@ -77,38 +75,33 @@ void ordenamientoQuicksort(T a[], int primero, int ultimo){
                 j--;
             }
 
-        }while(i<j);
+        }while(i <= j);
 
-        if(primero < j){
-            ordenamientoQuicksort(a, primero, j);
-        }
-        if(i<ultimo){
-            ordenamientoQuicksort(a,i, ultimo);
-        }
-
+        if(primero < j) ordenamientoQuicksort(a, primero, j);
+        if(i < ultimo) ordenamientoQuicksort(a, i, ultimo);
     }
 }
 
 template <typename T>
 void ordenamientoShellsort(T a[], int n){
     T aux;
-    for(int salto = n/2; salto >0; salto/=2){
-        for(int i= salto; i<n; i++){
-            int j = i- salto;
-            while(j>= 0){
-                int k = j+ salto;
-                if(a[j].getPromedio()<= a[k].getPromedio()){
-                    j--;
-                }else{
+    for(int salto = n / 2; salto > 0; salto /= 2){
+        for(int i = salto; i < n; i++){
+            int j = i - salto;
+            while(j >= 0){
+                int k = j + salto;
+                if(a[j].getPromedio() <= a[k].getPromedio()) break;
+                else{
                     aux = a[j];
-                    a[j] = a[j+1];
-                    a[j+1]=aux;
-                    j-=salto;
+                    a[j] = a[k];
+                    a[k] = aux;
+                    j -= salto;
                 }
             }
         }
     }
 }
+
 template<typename T>
 void CrearUrnas(T** Urnas, int m) {
     for (int i = 0; i < m; ++i) {
@@ -173,6 +166,7 @@ void bucketSort(T vector[], int n, int m) {
     }
     delete[] Urnas;
 }
+
 template <typename T>
 void mezclar(T arr[], int izquierda, int medio, int derecha) {
     int n1 = medio - izquierda + 1;
@@ -237,11 +231,11 @@ void mezclaNatural(T arr[], int n) {
 }
 
 template <typename T>
-int maximo(T a[], int n){
-    double mayor = a[0].getPromedio();
-    for(int i = 1; i <n; i++){
-        if(mayor < a[i].getPromedio()){
-            mayor = a[i].getPromedio();
+T maximo(T a[], int n){
+    T mayor = a[0];
+    for(int i = 1; i < n; i++){
+        if(mayor.getPromedio() < a[i].getPromedio()){
+            mayor = a[i];
         }
     }
     return mayor;
@@ -249,7 +243,7 @@ int maximo(T a[], int n){
 
 template <typename T>
 void ordenamientoPorConteo(T a[], int n, int exp) {
-    int salida[n];
+    T* salida = new T[n];
     int conteo[10] = {0};
 
     for (int i = 0; i < n; i++) {
@@ -257,11 +251,9 @@ void ordenamientoPorConteo(T a[], int n, int exp) {
         conteo[indice]++;
     }
 
-
     for (int i = 1; i < 10; i++) {
         conteo[i] += conteo[i - 1];
     }
-
 
     for (int i = n - 1; i >= 0; i--) {
         int indice = (a[i].getPromedio() / exp) % 10;
@@ -272,17 +264,21 @@ void ordenamientoPorConteo(T a[], int n, int exp) {
     for (int i = 0; i < n; i++) {
         a[i] = salida[i];
     }
+    delete[] salida;
 }
 
 template <typename T>
 void ordenarRadix(T a[], int n){
-    double max1=maximo(a,n);
+    T max1 = maximo(a, n);
     int exp = 1;
-    while ((max1/exp)>=1){
-        ordenamientoPorConteo(a,n,exp);
-        exp*=10;
+    while ((max1.getPromedio() / exp) >= 1){
+        ordenamientoPorConteo(a, n, exp);
+        exp *= 10;
     }
 }
+
+#endif
+
 
 
 

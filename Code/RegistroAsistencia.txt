@@ -240,3 +240,53 @@ Nombre		Apellido		Correo		N1	N2	Promedio
 asdad		adad		adad@espe.edu.ec	13	14	13.5
 fdfdf		dffdf		dfdf@espe.edu.ec	16	17	16.5
 sadada		dfdfdf		aasdsa@espe.edu.ec	18	19	18.5
+
+========================================================================================
+                 UNIDAD EDUCATIVA GOTITAS DEL SABER
+                 REPORTE DE CALIFICACIONES
+PERIODO: Mayo 2024 - Septiembre 2024
+Materia: Fisica
+NRC: 2313
+Nombre		Apellido		Correo		N1	Promedio
+Alejandro	Obando		alejo_obandoz@gmail.ocm	12	12
+Eirck		Obando		erickobando@gmail.com	14	14
+
+========================================================================================
+                 UNIDAD EDUCATIVA GOTITAS DEL SABER
+                 REPORTE DE CALIFICACIONES
+PERIODO: Mayo 2024 - Septiembre 2024
+Materia: Fisica
+NRC: 2313
+Nombre		Apellido		Correo		N1	Promedio
+Alejandro	Obando		alejo_obandoz@gmail.ocm	12	12
+Eirck		Obando		erickobando@gmail.com	14	14
+
+========================================================================================
+                 UNIDAD EDUCATIVA GOTITAS DEL SABER
+                 REPORTE DE CALIFICACIONES
+PERIODO: Mayo 2024 - Septiembre 2024
+Materia: Fisica
+NRC: 2345
+Nombre		Apellido		Correo		N1	Promedio
+Erickose	Obando		ale@.com	19	19
+aLEJANDRO	Obando		erick@.com	13	13
+
+========================================================================================
+                 UNIDAD EDUCATIVA GOTITAS DEL SABER
+                 REPORTE DE CALIFICACIONES
+PERIODO: Mayo 2024 - Septiembre 2024
+Materia: Ticks
+NRC: 2456
+Nombre		Apellido		Correo		N1	Promedio
+Alejandro	Obando		alejo@espe.edu	12	12
+Erick		Obando		erick@espe.edu	16	16
+
+========================================================================================
+                 UNIDAD EDUCATIVA GOTITAS DEL SABER
+                 REPORTE DE CALIFICACIONES
+PERIODO: Mayo 2024 - Septiembre 2024
+Materia: Fisica
+NRC: 6487
+Nombre		Apellido		Correo		N1	Promedio
+Erick		Obando		alejo@espe.edu.ec	12	12
+Alejandro	Obando		erick@espe.ec	15	15

@@ -1,0 +1,44 @@
+
+========================================================================================
+                 UNIDAD EDUCATIVA GOTITAS DEL SABER
+                 REPORTE DE CALIFICACIONES ORDENADAS
+
+Calificaciones Ordenadas
+ALGORITMO: Intercambio Simple
+N°- [12]
+Alumno: Alejandro Obando
+N°- [14]
+Alumno: Eirck Obando
+
+========================================================================================
+                 UNIDAD EDUCATIVA GOTITAS DEL SABER
+                 REPORTE DE CALIFICACIONES ORDENADAS
+
+Calificaciones Ordenadas
+ALGORITMO: Intercambio Simple
+N°- [13]
+Alumno: aLEJANDRO Obando
+N°- [19]
+Alumno: Erickose Obando
+
+========================================================================================
+                 UNIDAD EDUCATIVA GOTITAS DEL SABER
+                 REPORTE DE CALIFICACIONES ORDENADAS
+
+Calificaciones Ordenadas
+ALGORITMO: Intercambio Simple
+N°- [12]
+Alumno: Alejandro Obando
+N°- [16]
+Alumno: Erick Obando
+
+========================================================================================
+                 UNIDAD EDUCATIVA GOTITAS DEL SABER
+                 REPORTE DE CALIFICACIONES ORDENADAS
+
+Calificaciones Ordenadas
+ALGORITMO: Intercambio Simple
+N°- [12]
+Alumno: Erick Obando
+N°- [15]
+Alumno: Alejandro Obando

@@ -320,10 +320,11 @@ void menu()
             break;
         }
         case 4:
+
             if(notasIngresadas)
             {
-                ofstream impresion;
-                impresion.open("RegistroAsistencia.txt", ios::app);
+                string imprimirif;
+
                 cout << "\n========================================================================================" << endl;
                 cout << "                 UNIDAD EDUCATIVA GOTITAS DEL SABER" << endl;
                 cout << "                 REPORTE DE CALIFICACIONES" << endl;
@@ -331,30 +332,52 @@ void menu()
                 cout << "Materia: " << materia.nombre<<endl;
                 cout << "NRC: " << materia.NRC<<endl;
                 cout<<"Nombre"<<"\t\t"<<"Apellido"<<"\t\t"<<"Correo"<<"\t\t";
-
-
-
-                impresion << "\n========================================================================================" << endl;
-                impresion << "                 UNIDAD EDUCATIVA GOTITAS DEL SABER" << endl;
-                impresion << "                 REPORTE DE CALIFICACIONES" << endl;
-                impresion << "PERIODO: Mayo 2024 - Septiembre 2024" << endl;
-                impresion << "Materia: " << materia.nombre<<endl;
-                impresion << "NRC: " << materia.NRC<<endl;
-                impresion<<"Nombre"<<"\t\t"<<"Apellido"<<"\t\t"<<"Correo"<<"\t\t";
-
                 for (int i = 1; i <= numNotas; i++)
                 {
                     cout<<"N"<<i<<"\t";
-                    impresion<<"N"<<i<<"\t";
                 }
                 cout<<"Promedio"<<endl;
-                impresion<<"Promedio"<<endl;
+
                 for (int i = 0; i < numEstudiantes; i++)
                 {
-                 estudiante[i].imprimirDatostxt(impresion);
-                 estudiante[i].imprimirDatos();
+                    estudiante[i].imprimirDatos();
                 }
-                impresion.close();
+                cout<<endl<<"Desea imprimir en un txt.Para imprimir coloque [Y]"<<endl;
+                cin>>imprimirif;
+                if(imprimirif=="Y")
+                {
+                                    ofstream impresion;
+                impresion.open("RegistroAsistencia.txt", ios::app);
+                    impresion << "\n========================================================================================" << endl;
+                    impresion << "                 UNIDAD EDUCATIVA GOTITAS DEL SABER" << endl;
+                    impresion << "                 REPORTE DE CALIFICACIONES" << endl;
+                    impresion << "PERIODO: Mayo 2024 - Septiembre 2024" << endl;
+                    impresion << "Materia: " << materia.nombre<<endl;
+                    impresion << "NRC: " << materia.NRC<<endl;
+                    impresion<<"Nombre"<<"\t\t"<<"Apellido"<<"\t\t"<<"Correo"<<"\t\t";
+                    for (int i = 1; i <= numNotas; i++)
+                    {
+                        impresion<<"N"<<i<<"\t";
+                    }
+                    impresion<<"Promedio"<<endl;
+                    for (int i = 0; i < numEstudiantes; i++)
+                    {
+                        estudiante[i].imprimirDatostxt(impresion);
+                    }
+                    impresion.close();
+                    cout<<"Imprimiendo TXT"<<endl;
+
+
+                }else{
+                cout<<"Regresando al menu principal"<<endl;
+
+                }
+
+
+
+
+
+
             }
             else
             {
@@ -378,7 +401,8 @@ void menu()
                 }
                 metodoOrdenacion = escogerMetodoOrdenacion();
 
-                if((metodoOrdenacion != 10) && (metodoOrdenacion != 8) && (metodoOrdenacion != 9)){
+                if((metodoOrdenacion != 10) && (metodoOrdenacion != 8) && (metodoOrdenacion != 9))
+                {
                     impresion << "\n========================================================================================" << endl;
                     impresion << "                 UNIDAD EDUCATIVA GOTITAS DEL SABER" << endl;
                     impresion << "                 REPORTE DE CALIFICACIONES ORDENADAS" << endl;
@@ -453,7 +477,8 @@ void menu()
                     }
 
 
-                    if((metodoOrdenacion != 10) && (metodoOrdenacion != 8) && (metodoOrdenacion != 9)){
+                    if((metodoOrdenacion != 10) && (metodoOrdenacion != 8) && (metodoOrdenacion != 9))
+                    {
                         for (int i = 0; i < numEstudiantes; i++)
                         {
                             impresion << "N°- " << "[" <<estudiantesOrdenados[i].getPromedio() << "]" << endl;
@@ -485,7 +510,8 @@ void menu()
             if(notasIngresadas)
             {
                 metodoBusqueda = escogerMetodoBusqueda();
-                if(metodoBusqueda != 4){
+                if(metodoBusqueda != 4)
+                {
                     cout << "Ingrese el promedio que desea buscar: ";
                     cin >> calificacion;
                     impresion << "\n========================================================================================" << endl;
@@ -542,17 +568,18 @@ void menu()
                     break;
                 }
 
-                if((index != -1) && (metodoBusqueda != 4)){
-                        cout << "La calificación a buscar fue de " << calificacion << ": " << endl;
-                        cout << "\nCorresponde al estudiante: " << endl;
-                        cout << "Alumno: " << estudianteEncontrado.getNombre() << " " << estudianteEncontrado.getApellido() << endl;
-                        cout << "Promedio: " << estudianteEncontrado.getPromedio() << endl;
-                        cout << "index: " << index << endl;
+                if((index != -1) && (metodoBusqueda != 4))
+                {
+                    cout << "La calificación a buscar fue de " << calificacion << ": " << endl;
+                    cout << "\nCorresponde al estudiante: " << endl;
+                    cout << "Alumno: " << estudianteEncontrado.getNombre() << " " << estudianteEncontrado.getApellido() << endl;
+                    cout << "Promedio: " << estudianteEncontrado.getPromedio() << endl;
+                    cout << "index: " << index << endl;
 
-                        impresion << "\nCorresponde al estudiante: " << endl;
-                        impresion << "Alumno: " << estudianteEncontrado.getNombre() << " " << estudianteEncontrado.getApellido() << endl;
-                        impresion << "Promedio: " << estudianteEncontrado.getPromedio() << endl;
-                        impresion << "index: " << index << endl;
+                    impresion << "\nCorresponde al estudiante: " << endl;
+                    impresion << "Alumno: " << estudianteEncontrado.getNombre() << " " << estudianteEncontrado.getApellido() << endl;
+                    impresion << "Promedio: " << estudianteEncontrado.getPromedio() << endl;
+                    impresion << "index: " << index << endl;
                 }
                 else
                 {

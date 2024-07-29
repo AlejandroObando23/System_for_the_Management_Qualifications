@@ -107,3 +107,48 @@ Corresponde al estudiante:
 Alumno: fdfdf dffdf
 Promedio: 16.5
 index: 1
+
+========================================================================================
+                 UNIDAD EDUCATIVA GOTITAS DEL SABER
+                 REPORTE DE CALIFICACIONES ORDENADAS
+
+ Búqueda de calificaciones
+
+ La calificación a buscar fue: 12
+
+ALGORITMO: Busqueda Lineal
+
+Corresponde al estudiante: 
+Alumno: Alejandro Obando
+Promedio: 12
+index: 0
+
+========================================================================================
+                 UNIDAD EDUCATIVA GOTITAS DEL SABER
+                 REPORTE DE CALIFICACIONES ORDENADAS
+
+ Búqueda de calificaciones
+
+ La calificación a buscar fue: 13
+
+ALGORITMO: Busqueda Lineal
+
+Corresponde al estudiante: 
+Alumno: aLEJANDRO Obando
+Promedio: 13
+index: 1
+
+========================================================================================
+                 UNIDAD EDUCATIVA GOTITAS DEL SABER
+                 REPORTE DE CALIFICACIONES ORDENADAS
+
+ Búqueda de calificaciones
+
+ La calificación a buscar fue: 12
+
+ALGORITMO: Busqueda Lineal
+
+Corresponde al estudiante: 
+Alumno: Alejandro Obando
+Promedio: 12
+index: 0

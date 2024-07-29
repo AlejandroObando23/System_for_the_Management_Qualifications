@@ -69,4 +69,36 @@ int busquedaLineal(T arr[], int size, double valor) {
     return -1;
 }
 
+template <typename T>
+int busquedaBinaria(T arr[], int izquierda, int derecha, double valor) {
+    while (izquierda <= derecha) {
+        int medio = izquierda + (derecha - izquierda) / 2;
+
+        if (arr[medio].getPromedio() == valor) {
+            return medio;
+        }
+
+        if (arr[medio].getPromedio() < valor) {
+            izquierda = medio + 1;
+        } else {
+            derecha = medio - 1;
+        }
+    }
+    return -1;
+}
+
+template <typename T>
+void ordenarPorPromedio(T arr[], int tamano) {
+    for (int i = 0; i < tamano - 1; ++i) {
+        for (int j = 0; j < tamano - i - 1; ++j) {
+            if (arr[j].getPromedio() > arr[j + 1].getPromedio()) {
+                T temp = arr[j];
+                arr[j] = arr[j + 1];
+                arr[j + 1] = temp;
+            }
+        }
+    }
+}
+
+
 

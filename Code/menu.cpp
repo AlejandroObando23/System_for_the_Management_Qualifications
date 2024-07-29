@@ -20,9 +20,9 @@ void menuBienvenida();
 void mostrarInformacionMateria();
 int escogerMetodoOrdenacion();
 int escogerMetodoBusqueda();
-<<<<<<< HEAD
+
 int busquedaLineal(Estudiante arr[], int size, const Estudiante& key);
-=======
+
 bool esSoloLetras(const string& cadena)
 {
     for (char c : cadena)
@@ -35,7 +35,7 @@ bool esSoloLetras(const string& cadena)
     return true;
 }
 
->>>>>>> f27d34584a693eaee2fcd73f8c30fee01007e21f
+
 
 int validarNumero(char numero[])
 {
@@ -225,7 +225,7 @@ void menu()
                 {
                     estudiante[i].setNotas(numNotas);
                     fflush(stdin);
-                    string nombre, apellido;
+                    string nombre, apellido, correo;
                     cout << "\n=== ESTUDIANTE #" << i+1 << " ==="<< endl;
 
                     while (true)
@@ -261,6 +261,20 @@ void menu()
                         }
                     }
                     estudiante[i].setApellido(apellido);
+                    while (true)
+                    {
+                        cout << "Ingrese el correo del estudiante (ej. nombre@espe.edu.ec): ";
+                        cin >> correo;
+                        if (correo.find('@') != string::npos && correo.find('.') != string::npos)
+                        {
+                            break;
+                        }
+                        else
+                        {
+                            cout << "Correo electrónico no válido. Por favor, ingrese un correo válido." << endl;
+                        }
+                    }
+                    estudiante[i].setCorreo(correo);
                     cout << endl;
                     for(int j = 0; j< numNotas; j++)
                     {
@@ -438,9 +452,23 @@ void menu()
                     }
 
                 case 2:
-                    cout << "Método de Búsqueda Binaria seleccionado." << endl;
-                    //fucion
-                    break;
+                     {
+                        cout << "Método de Búsqueda Binaria seleccionado." << endl;
+                        ordenarPorPromedio(estudiante, numEstudiantes);
+
+                        int indice = busquedaBinaria(estudiante, 0, numEstudiantes - 1, calificacion);
+                        if (indice != -1) {
+                            Estudiante estudianteEncontrado = estudiante[indice];
+                            cout << "La calificación a buscar fue de " << calificacion << ": " << endl;
+                            cout << "\nCorresponde al estudiante: " << endl;
+                            cout << "Alumno: " << estudianteEncontrado.getNombre() << " " << estudianteEncontrado.getApellido() << endl;
+                            cout << "Promedio: " << estudianteEncontrado.getPromedio() << endl;
+                        } else {
+                            cout << "Calificación no encontrada." << endl;
+                        }
+                        break;
+                    }
+
                 case 3:
                  {
                     cout << "Método de Búsqueda Hash seleccionado." << endl;

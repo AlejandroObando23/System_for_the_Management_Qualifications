@@ -7,6 +7,7 @@ class Estudiante{
 private:
     string nombre;
     string apellido;
+    string correo;
     double *notas;
     double promedio;
     int N;
@@ -24,6 +25,15 @@ public:
     }
     void setApellido(string a){
         apellido=a;
+    }
+
+    void setCorreo(string c) {
+        correo = c;
+    }
+
+    bool validarCorreo() {
+        string patron = nombre + "@espe.edu.ec";
+        return correo == patron;
     }
 
     void ingresoNota(int i, double n){
@@ -54,6 +64,10 @@ public:
         return apellido;
     }
 
+    string getCorreo() {
+        return correo;
+    }
+
     void imprimirDatos(){
 
         cout<< nombre;
@@ -72,6 +86,7 @@ public:
             cout<< notas[i]<<"\t";
         }
         cout << promedio << endl;
+        cout << correo << endl;
 
     }
 };

@@ -68,7 +68,34 @@ public:
         return correo;
     }
 
-    void imprimirDatos(){
+    void imprimirDatostxt(ofstream& impresion){
+
+        impresion<< nombre;
+        if(nombre.size()<7){
+            impresion<<"\t\t"<<apellido;
+        }else{
+            impresion<<"\t"<<apellido;
+        }
+        if(apellido.size()<7){
+            impresion<<"\t\t"<<correo;
+        }else{
+            impresion<<"\t"<<correo;
+        }
+        if(correo.size()<7){
+            impresion<<"\t\t";
+        }else{
+            impresion<<"\t";
+        }
+
+        for(int i = 0; i<N; i++){
+            impresion<< notas[i]<<"\t";
+        }
+        impresion << promedio << endl;
+
+
+    }
+
+        void imprimirDatos(){
 
         cout<< nombre;
         if(nombre.size()<10){
@@ -76,8 +103,18 @@ public:
         }else{
             cout<<"\t"<<apellido;
         }
+<<<<<<< HEAD
         if(apellido.size()<10){
             cout<<"\t\t" << correo;
+=======
+        if(apellido.size()<7){
+            cout<<"\t\t"<<correo;
+        }else{
+            cout<<"\t"<<correo;
+        }
+        if(correo.size()<7){
+            cout<<"\t\t";
+>>>>>>> 5e50d1a67c563c84dc5d418847ebfe6e6d9bf86c
         }else{
             cout<<"\t" << correo<<"\t";
         }

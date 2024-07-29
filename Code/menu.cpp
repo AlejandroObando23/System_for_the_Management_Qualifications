@@ -2,6 +2,7 @@
 #include <conio.h>
 #include <cctype>
 #include <windows.h>
+#include <fstream>
 #include "EstudianteNota.h"
 #include "Busquedas.h"
 #include "Ordenamientos.h"
@@ -321,22 +322,45 @@ void menu()
         case 4:
             if(notasIngresadas)
             {
+                ofstream impresion;
+                impresion.open("RegistroAsistencia.txt", ios::app);
                 cout << "\n========================================================================================" << endl;
                 cout << "                 UNIDAD EDUCATIVA GOTITAS DEL SABER" << endl;
                 cout << "                 REPORTE DE CALIFICACIONES" << endl;
                 cout << "PERIODO: Mayo 2024 - Septiembre 2024" << endl;
                 cout << "Materia: " << materia.nombre<<endl;
                 cout << "NRC: " << materia.NRC<<endl;
+<<<<<<< HEAD
                 cout<<"Nombre"<<"\t\t"<<"Apellido"<<"\t"<<"Correo"<<"\t\t";
 
                 for (int i = 1; i <= numNotas; i++)
                 {
                     cout<<"\t"<<"N"<<i<<"\t";
+=======
+                cout<<"Nombre"<<"\t\t"<<"Apellido"<<"\t\t"<<"Correo"<<"\t\t";
+
+
+
+                impresion << "\n========================================================================================" << endl;
+                impresion << "                 UNIDAD EDUCATIVA GOTITAS DEL SABER" << endl;
+                impresion << "                 REPORTE DE CALIFICACIONES" << endl;
+                impresion << "PERIODO: Mayo 2024 - Septiembre 2024" << endl;
+                impresion << "Materia: " << materia.nombre<<endl;
+                impresion << "NRC: " << materia.NRC<<endl;
+                impresion<<"Nombre"<<"\t\t"<<"Apellido"<<"\t\t"<<"Correo"<<"\t\t";
+
+                for (int i = 1; i <= numNotas; i++)
+                {
+                    cout<<"N"<<i<<"\t";
+                    impresion<<"N"<<i<<"\t";
+>>>>>>> 5e50d1a67c563c84dc5d418847ebfe6e6d9bf86c
                 }
-                cout<<"Promedio\n"<<endl;
+                cout<<"Promedio"<<endl;
+                impresion<<"Promedio"<<endl;
                 for (int i = 0; i < numEstudiantes; i++)
                 {
-                    estudiante[i].imprimirDatos();
+                 estudiante[i].imprimirDatostxt(impresion);
+                 estudiante[i].imprimirDatos();
                 }
             }
             else

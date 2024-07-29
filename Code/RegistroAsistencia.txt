@@ -1,0 +1,33 @@
+
+========================================================================================
+                 UNIDAD EDUCATIVA GOTITAS DEL SABER
+                 REPORTE DE CALIFICACIONES
+PERIODO: Mayo 2024 - Septiembre 2024
+Materia: Fisica
+NRC: 3422
+Nombre		Apellido	N1	Promedio
+
+Alejandro	Alejandrio	12	12
+alejo_obando@gmail.com
+Erick		Obando		16	16
+erickObando@gmail.com
+
+========================================================================================
+                 UNIDAD EDUCATIVA GOTITAS DEL SABER
+                 REPORTE DE CALIFICACIONES
+PERIODO: Mayo 2024 - Septiembre 2024
+Materia: Fisica
+NRC: 2356
+Nombre		Apellido		Correo	N1	Promedio
+Alejandro	Alejanro	Alejo_oba@gmail.com	12	12
+Erick		Obando		erickobando@gmail.com	12	12
+
+========================================================================================
+                 UNIDAD EDUCATIVA GOTITAS DEL SABER
+                 REPORTE DE CALIFICACIONES
+PERIODO: Mayo 2024 - Septiembre 2024
+Materia: Fisica
+NRC: 2354
+Nombre		Apellido		Correo		N1	Promedio
+Alejandro	Alejandro	alejo_dasd@gmail.com	12	12
+Erick		Obando		ericobando@gmail.com	12	12

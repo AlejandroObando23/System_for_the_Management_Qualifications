@@ -213,7 +213,7 @@ void mezclaNatural(T arr[], int n) {
     inicios[numInicios++] = 0;
 
     for (int i = 1; i < n; ++i) {
-        if (arr[i] < arr[i - 1]) {
+        if (arr[i] <= arr[i - 1]) {
             inicios[numInicios++] = i;
         }
     }
@@ -247,7 +247,7 @@ void ordenamientoPorConteo(T a[], int n, int exp) {
     int conteo[10] = {0};
 
     for (int i = 0; i < n; i++) {
-        int indice = (a[i].getPromedio() / exp) % 10;
+        int indice = static_cast<int>(a[i].getPromedio() / exp) % 10;
         conteo[indice]++;
     }
 
@@ -256,7 +256,7 @@ void ordenamientoPorConteo(T a[], int n, int exp) {
     }
 
     for (int i = n - 1; i >= 0; i--) {
-        int indice = (a[i].getPromedio() / exp) % 10;
+        int indice = static_cast<int>(a[i].getPromedio() / exp) % 10;
         salida[conteo[indice] - 1] = a[i];
         conteo[indice]--;
     }
@@ -271,7 +271,7 @@ template <typename T>
 void ordenarRadix(T a[], int n){
     T max1 = maximo(a, n);
     int exp = 1;
-    while ((max1.getPromedio() / exp) >= 1){
+    while ((static_cast<int>(max1.getPromedio()) / exp) >= 1){
         ordenamientoPorConteo(a, n, exp);
         exp *= 10;
     }

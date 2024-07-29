@@ -1,0 +1,109 @@
+
+========================================================================================
+                 UNIDAD EDUCATIVA GOTITAS DEL SABER
+                 REPORTE DE CALIFICACIONES ORDENADAS
+
+ Búqueda de calificaciones
+
+ La calificación a buscar fue: 11.5
+ALGORITMO: Busqueda Lineal
+La calificación a buscar fue de 11.5: 
+
+Corresponde al estudiante: 
+Alumno:  
+Promedio: 0
+index: 0
+
+========================================================================================
+                 UNIDAD EDUCATIVA GOTITAS DEL SABER
+                 REPORTE DE CALIFICACIONES ORDENADAS
+
+ Búqueda de calificaciones
+
+ La calificación a buscar fue: 11.5
+ALGORITMO: Busqueda Binaria
+La calificación a buscar fue de 11.5: 
+
+Corresponde al estudiante: 
+Alumno:  
+Promedio: 0
+index: 0
+
+========================================================================================
+                 UNIDAD EDUCATIVA GOTITAS DEL SABER
+                 REPORTE DE CALIFICACIONES ORDENADAS
+
+ Búqueda de calificaciones
+
+ La calificación a buscar fue: 18.5
+ALGORITMO: Busqueda Lineal
+
+Corresponde al estudiante: 
+Alumno: sadada dfdfdf
+Promedio: 18.5
+index: 2
+
+========================================================================================
+                 UNIDAD EDUCATIVA GOTITAS DEL SABER
+                 REPORTE DE CALIFICACIONES ORDENADAS
+
+ Búqueda de calificaciones
+
+ La calificación a buscar fue: 18.5
+ALGORITMO: Busqueda Binaria
+
+Corresponde al estudiante: 
+Alumno: sadada dfdfdf
+Promedio: 18.5
+index: 2
+
+========================================================================================
+                 UNIDAD EDUCATIVA GOTITAS DEL SABER
+                 REPORTE DE CALIFICACIONES ORDENADAS
+
+ Búqueda de calificaciones
+
+ La calificación a buscar fue: 18.5
+ALGORITMO: Busqueda Hash
+
+Corresponde al estudiante: 
+Alumno: sadada dfdfdf
+Promedio: 18.5
+index: 2
+
+========================================================================================
+                 UNIDAD EDUCATIVA GOTITAS DEL SABER
+                 REPORTE DE CALIFICACIONES ORDENADAS
+
+ Búqueda de calificaciones
+
+ La calificación a buscar fue: 11
+Calificación no encontrada.
+
+========================================================================================
+                 UNIDAD EDUCATIVA GOTITAS DEL SABER
+                 REPORTE DE CALIFICACIONES ORDENADAS
+
+ Búqueda de calificaciones
+
+ La calificación a buscar fue: 16.5
+ALGORITMO: Busqueda Hash
+
+Corresponde al estudiante: 
+Alumno: fdfdf dffdf
+Promedio: 16.5
+index: 0
+
+========================================================================================
+                 UNIDAD EDUCATIVA GOTITAS DEL SABER
+                 REPORTE DE CALIFICACIONES ORDENADAS
+
+ Búqueda de calificaciones
+
+ La calificación a buscar fue: 16.5
+ALGORITMO: Busqueda Lineal
+
+Corresponde al estudiante: 
+Alumno: fdfdf dffdf
+Promedio: 16.5
+index: 1

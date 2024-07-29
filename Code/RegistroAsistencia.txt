@@ -31,3 +31,212 @@ NRC: 2354
 Nombre		Apellido		Correo		N1	Promedio
 Alejandro	Alejandro	alejo_dasd@gmail.com	12	12
 Erick		Obando		ericobando@gmail.com	12	12
+
+========================================================================================
+                 UNIDAD EDUCATIVA GOTITAS DEL SABER
+                 REPORTE DE CALIFICACIONES
+PERIODO: Mayo 2024 - Septiembre 2024
+Materia: fer
+NRC: 1234
+Nombre		Apellido		Correo		N1	N2	Promedio
+efr		qf		nombre@espe.edu.ec	19	19	19
+dhew		wedohw		nombre@espe.edu.ec	15	10	12.5
+hdwe		ewjkdwe	nombre@espe.edu.ec	18	0	9
+
+========================================================================================
+                 UNIDAD EDUCATIVA GOTITAS DEL SABER
+                 REPORTE DE CALIFICACIONES
+PERIODO: Mayo 2024 - Septiembre 2024
+Materia: fer
+NRC: 1234
+Nombre		Apellido		Correo		N1	N2	Promedio
+efr		qf		nombre@espe.edu.ec	19	19	19
+dhew		wedohw		nombre@espe.edu.ec	15	10	12.5
+hdwe		ewjkdwe	nombre@espe.edu.ec	18	0	9
+
+========================================================================================
+                 UNIDAD EDUCATIVA GOTITAS DEL SABER
+                 REPORTE DE CALIFICACIONES
+PERIODO: Mayo 2024 - Septiembre 2024
+Materia: wfne
+NRC: 1234
+Nombre		Apellido		Correo		N1	Promedio
+dfewf		erfer		nombre@espe.edu.ec	20	20
+dewud		wfdwh		nombre@espe.edu.ec	13	13
+wde		wefd		nombre@espe.edu.ec	12	12
+
+========================================================================================
+                 UNIDAD EDUCATIVA GOTITAS DEL SABER
+                 REPORTE DE CALIFICACIONES
+PERIODO: Mayo 2024 - Septiembre 2024
+Materia: dsfd
+NRC: 213
+Nombre		Apellido		Correo		N1	N2	Promedio
+erfer		reffer		nombre@espe.edu.ec	12	20	16
+eugfe		edhwed		nombre@espe.edu.ec	0	0	0
+dhefde		deuw		nombre@espe.edu.ec	12	11	11.5
+
+========================================================================================
+                 UNIDAD EDUCATIVA GOTITAS DEL SABER
+                 REPORTE DE CALIFICACIONES
+PERIODO: Mayo 2024 - Septiembre 2024
+Materia: ewde
+NRC: 1234
+Nombre		Apellido		Correo		N1	N2	N3	N4	Promedio
+ewdwe		wedwef		nombre@espe.edu.ec	15	17	14	13	14.75
+wdwef		wewf		nombre@espe.edu.ec	17	18	19	13	16.75
+gdewf		wedhwe		nombre@espe.edu.ec	12	11	19	12	13.5
+
+========================================================================================
+                 UNIDAD EDUCATIVA GOTITAS DEL SABER
+                 REPORTE DE CALIFICACIONES
+PERIODO: Mayo 2024 - Septiembre 2024
+Materia: Estadistica
+NRC: 13613
+Nombre		Apellido		Correo		N1	N2	N3	Promedio
+Erick		Obando		ericksito@espe.edu.ec	12	13	14	13
+Alexander	Niacato	niacatito@espe.edu.ec	13	14	13	13.3333
+Marcelo	Pareja		marcelito@espe.edu.ec	19	18	20	19
+
+========================================================================================
+                 UNIDAD EDUCATIVA GOTITAS DEL SABER
+                 REPORTE DE CALIFICACIONES
+PERIODO: Mayo 2024 - Septiembre 2024
+Materia: Estadistica
+NRC: 13613
+Nombre		Apellido		Correo		N1	N2	N3	Promedio
+adasda		adadad		adad@espe.edu.ec	13	14	15	14
+asdada		adada		lmkin@espe.edu,ec	19	18	20	19
+jfjnfgjfn	jfngngngn	sds@espe.edu.ec	11	9	7	9
+
+========================================================================================
+                 UNIDAD EDUCATIVA GOTITAS DEL SABER
+                 REPORTE DE CALIFICACIONES
+PERIODO: Mayo 2024 - Septiembre 2024
+Materia: adad
+NRC: 13613
+Nombre		Apellido		Correo		N1	N2	N3	Promedio
+adad		adad		adad@espe.edu.ec	13	11	9	11
+ada		dfdf		fdgd@espe.edu.ec	17	18	16	17
+adada		dadad		adad@espe.edu.ec	19	18	20	19
+
+========================================================================================
+                 UNIDAD EDUCATIVA GOTITAS DEL SABER
+                 REPORTE DE CALIFICACIONES
+PERIODO: Mayo 2024 - Septiembre 2024
+Materia: asdad
+NRC: 13613
+Nombre		Apellido		Correo		N1	N2	Promedio
+adad		adada		adad@espe.edu.ec	11	10	10.5
+adadad		dggdg		gdg@espe.edu.ec	19	18	18.5
+addad		fgdgdg		adsfdf@espe.edu.ec	8	7	7.5
+
+========================================================================================
+                 UNIDAD EDUCATIVA GOTITAS DEL SABER
+                 REPORTE DE CALIFICACIONES
+PERIODO: Mayo 2024 - Septiembre 2024
+Materia: dadad
+NRC: 13613
+Nombre		Apellido		Correo		N1	N2	Promedio
+zxczc		zczc		aasda@espe.edu.ec	11	10	10.5
+yghyb		mkmk		mkmk@espe.edu.ec	4.6	10	7.3
+mkmkm		mkkmkm		kmkm@espe.edu.ec	8	7	7.5
+
+========================================================================================
+                 UNIDAD EDUCATIVA GOTITAS DEL SABER
+                 REPORTE DE CALIFICACIONES
+PERIODO: Mayo 2024 - Septiembre 2024
+Materia: dadad
+NRC: 13613
+Nombre		Apellido		Correo		N1	N2	Promedio
+yghyb		mkmk		mkmk@espe.edu.ec	4.6	10	7.3
+mkmkm		mkkmkm		kmkm@espe.edu.ec	8	7	7.5
+zxczc		zczc		aasda@espe.edu.ec	11	10	10.5
+
+========================================================================================
+                 UNIDAD EDUCATIVA GOTITAS DEL SABER
+                 REPORTE DE CALIFICACIONES
+PERIODO: Mayo 2024 - Septiembre 2024
+Materia: adadad
+NRC: 13613
+Nombre		Apellido		Correo		N1	N2	Promedio
+asdada		adada		78787@espe.edu.ec	9	7	8
+afds		sdsdsd		knjn@espe.edu.ec	13	2	7.5
+sadad		dfdfd		fddfd@espe.edu.ec	15	14	14.5
+
+========================================================================================
+                 UNIDAD EDUCATIVA GOTITAS DEL SABER
+                 REPORTE DE CALIFICACIONES
+PERIODO: Mayo 2024 - Septiembre 2024
+Materia: adadad
+NRC: 13613
+Nombre		Apellido		Correo		N1	N2	Promedio
+asdada		adada		78787@espe.edu.ec	9	7	8
+afds		sdsdsd		knjn@espe.edu.ec	13	2	7.5
+sadad		dfdfd		fddfd@espe.edu.ec	15	14	14.5
+
+========================================================================================
+                 UNIDAD EDUCATIVA GOTITAS DEL SABER
+                 REPORTE DE CALIFICACIONES
+PERIODO: Mayo 2024 - Septiembre 2024
+Materia: adadad
+NRC: 13613
+Nombre		Apellido		Correo		N1	N2	Promedio
+afds		sdsdsd		knjn@espe.edu.ec	13	2	7.5
+asdada		adada		78787@espe.edu.ec	9	7	8
+sadad		dfdfd		fddfd@espe.edu.ec	15	14	14.5
+
+========================================================================================
+                 UNIDAD EDUCATIVA GOTITAS DEL SABER
+                 REPORTE DE CALIFICACIONES
+PERIODO: Mayo 2024 - Septiembre 2024
+Materia: adadad
+NRC: 13613
+Nombre		Apellido		Correo		N1	N2	Promedio
+afds		sdsdsd		knjn@espe.edu.ec	13	2	7.5
+asdada		adada		78787@espe.edu.ec	9	7	8
+sadad		dfdfd		fddfd@espe.edu.ec	15	14	14.5
+
+========================================================================================
+                 UNIDAD EDUCATIVA GOTITAS DEL SABER
+                 REPORTE DE CALIFICACIONES
+PERIODO: Mayo 2024 - Septiembre 2024
+Materia: adada
+NRC: 13613
+Nombre		Apellido		Correo		N1	N2	Promedio
+adadad		adada		adad@espe.edu.ec	15	14	14.5
+daadad		adada		dfdf@espe.edu.ec	17	18	17.5
+dgdgdg		dgdgdg		dgdg@espe.edu.ec	12	13	12.5
+
+========================================================================================
+                 UNIDAD EDUCATIVA GOTITAS DEL SABER
+                 REPORTE DE CALIFICACIONES
+PERIODO: Mayo 2024 - Septiembre 2024
+Materia: asdad
+NRC: 13613
+Nombre		Apellido		Correo		N1	N2	Promedio
+sada		adad		adada@espe.edu.ec	11	12	11.5
+asdasfs	dfdfd		fsfs@espe.edu.ec	16	17	16.5
+fdfdfg		dfdfd		fdfd@espe.edu.ec	14	17	15.5
+
+========================================================================================
+                 UNIDAD EDUCATIVA GOTITAS DEL SABER
+                 REPORTE DE CALIFICACIONES
+PERIODO: Mayo 2024 - Septiembre 2024
+Materia: Estadistica
+NRC: 13613
+Nombre		Apellido		Correo		N1	N2	Promedio
+asdad		adad		adad@espe.edu.ec	13	14	13.5
+fdfdf		dffdf		dfdf@espe.edu.ec	16	17	16.5
+sadada		dfdfdf		aasdsa@espe.edu.ec	18	19	18.5
+
+========================================================================================
+                 UNIDAD EDUCATIVA GOTITAS DEL SABER
+                 REPORTE DE CALIFICACIONES
+PERIODO: Mayo 2024 - Septiembre 2024
+Materia: Estadistica
+NRC: 13613
+Nombre		Apellido		Correo		N1	N2	Promedio
+asdad		adad		adad@espe.edu.ec	13	14	13.5
+fdfdf		dffdf		dfdf@espe.edu.ec	16	17	16.5
+sadada		dfdfdf		aasdsa@espe.edu.ec	18	19	18.5

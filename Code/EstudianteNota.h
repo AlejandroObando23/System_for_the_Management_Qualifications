@@ -1,5 +1,6 @@
 #include <iostream>
 #include <string>
+#include <cmath>
 
 using namespace std;
 
@@ -41,18 +42,19 @@ public:
     }
 
     void promediar(){
-        double suma;
+        double suma=0;
         for(int i = 0; i<N; i++){
             suma = suma + notas[i];
         }
-        promedio = suma/N;
+        double valor = suma/N;
+        promedio = round(valor * 100.0) / 100.0;
     }
 
     void setPromedio(double n){
         promedio = n;
     }
 
-    double getPromedio(){
+    double getPromedio()const{
         return promedio;
     }
 
@@ -98,15 +100,11 @@ public:
         void imprimirDatos(){
 
         cout<< nombre;
-        if(nombre.size()<10){
+        if(nombre.size()<7){
             cout<<"\t\t"<<apellido;
         }else{
             cout<<"\t"<<apellido;
         }
-<<<<<<< HEAD
-        if(apellido.size()<10){
-            cout<<"\t\t" << correo;
-=======
         if(apellido.size()<7){
             cout<<"\t\t"<<correo;
         }else{
@@ -114,16 +112,24 @@ public:
         }
         if(correo.size()<7){
             cout<<"\t\t";
->>>>>>> 5e50d1a67c563c84dc5d418847ebfe6e6d9bf86c
         }else{
-            cout<<"\t" << correo<<"\t";
+            cout<<"\t";
         }
 
         for(int i = 0; i<N; i++){
-            cout<<"\t"<< notas[i]<<"\t";
+            cout<< notas[i]<<"\t";
         }
         cout << promedio << endl;
 
 
+    }
+    bool operator<=(const Estudiante& otro) const {
+        return this->getPromedio() <= otro.getPromedio();
+    }
+
+
+    // Destructor para liberar memoria
+    ~Estudiante() {
+        delete[] notas;
     }
 };

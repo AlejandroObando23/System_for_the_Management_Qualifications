@@ -327,11 +327,11 @@ void menu()
                 cout << "PERIODO: Mayo 2024 - Septiembre 2024" << endl;
                 cout << "Materia: " << materia.nombre<<endl;
                 cout << "NRC: " << materia.NRC<<endl;
-                cout<<"Nombre"<<"\t\t"<<"Apellido"<<"\t";
+                cout<<"Nombre"<<"\t\t"<<"Apellido"<<"\t"<<"Correo"<<"\t\t";
 
                 for (int i = 1; i <= numNotas; i++)
                 {
-                    cout<<"N"<<i<<"\t";
+                    cout<<"\t"<<"N"<<i<<"\t";
                 }
                 cout<<"Promedio\n"<<endl;
                 for (int i = 0; i < numEstudiantes; i++)
@@ -383,6 +383,7 @@ void menu()
                 case 6:
                     cout << "Método de BucketSort seleccionado." << endl;
                     //bucketSort(estudiantesOrdenados, numEstudiantes, MAX);
+
 
                     break;
                 case 7:

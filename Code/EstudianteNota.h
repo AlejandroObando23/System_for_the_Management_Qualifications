@@ -71,22 +71,22 @@ public:
     void imprimirDatos(){
 
         cout<< nombre;
-        if(nombre.size()<7){
+        if(nombre.size()<10){
             cout<<"\t\t"<<apellido;
         }else{
             cout<<"\t"<<apellido;
         }
-        if(apellido.size()<7){
-            cout<<"\t\t";
+        if(apellido.size()<10){
+            cout<<"\t\t" << correo;
         }else{
-            cout<<"\t";
+            cout<<"\t" << correo<<"\t";
         }
 
         for(int i = 0; i<N; i++){
-            cout<< notas[i]<<"\t";
+            cout<<"\t"<< notas[i]<<"\t";
         }
         cout << promedio << endl;
-        cout << correo << endl;
+
 
     }
 };

@@ -325,6 +325,9 @@ void menu()
             {
                 string imprimirif;
                 double promediocurso;
+                int aprobados=0;
+                int suspendidos=0;
+                int reprobados=0;
 
                 cout << "\n========================================================================================" << endl;
                 cout << "                 UNIDAD EDUCATIVA GOTITAS DEL SABER" << endl;
@@ -344,9 +347,21 @@ void menu()
 
                     estudiante[i].imprimirDatos();
                     promediocurso=estudiante[i].getPromedio() + promediocurso;
+                    if(14<estudiante[i].getPromedio()){
+                        aprobados++;
+                    }
+                    else if(14>estudiante[i].getPromedio() && 9<estudiante[i].getPromedio()){
+                        suspendidos++;
+
+                    }else{
+                    reprobados++;
+                    }
                 }
                 promediocurso=promediocurso/numEstudiantes;
                 cout<<endl<<"Promedio general del curso es: "<<promediocurso<<endl;
+                cout<<"Aprobado: "<<aprobados<<endl;
+                cout<<"Suspendidos: "<<suspendidos<<endl;
+                cout<<"Reprobados: "<<reprobados<<endl;
 
                 cout<<endl<<"Desea imprimir en un txt.Para imprimir coloque [Y]"<<endl;
                 cin>>imprimirif;
@@ -371,6 +386,9 @@ void menu()
                         estudiante[i].imprimirDatostxt(impresion);
                     }
                     impresion<<endl<<"Promedio general del curso es: "<<promediocurso<<endl;
+                    impresion<<"Aprobado: "<<aprobados<<endl;
+                    impresion<<"Suspendidos: "<<suspendidos<<endl;
+                    impresion<<"Reprobados: "<<reprobados<<endl;
                     impresion.close();
                     cout<<"Imprimiendo TXT"<<endl;
 

@@ -15,6 +15,8 @@ struct Materia
     string nombre;
     string NRC;
 };
+string nombremaestra;
+string cedulamaestra;
 
 Materia materia;
 void menuBienvenida();
@@ -347,14 +349,18 @@ void menu()
 
                     estudiante[i].imprimirDatos();
                     promediocurso=estudiante[i].getPromedio() + promediocurso;
-                    if(14<estudiante[i].getPromedio()){
+                    if(14<estudiante[i].getPromedio())
+                    {
                         aprobados++;
                     }
-                    else if(14>estudiante[i].getPromedio() && 9<estudiante[i].getPromedio()){
+                    else if(14>estudiante[i].getPromedio() && 9<estudiante[i].getPromedio())
+                    {
                         suspendidos++;
 
-                    }else{
-                    reprobados++;
+                    }
+                    else
+                    {
+                        reprobados++;
                     }
                 }
                 promediocurso=promediocurso/numEstudiantes;
@@ -362,13 +368,18 @@ void menu()
                 cout<<"Aprobado: "<<aprobados<<endl;
                 cout<<"Suspendidos: "<<suspendidos<<endl;
                 cout<<"Reprobados: "<<reprobados<<endl;
+                cout<<endl<<"\n\t\t---------------------------"<<endl;
+                cout<<"\t\t\t"<<"Docente"<<endl;
+                cout<<"\t\t\t"<<nombremaestra<<endl;
+                cout<<"\t\t\t"<<cedulamaestra<<endl;
+
 
                 cout<<endl<<"Desea imprimir en un txt.Para imprimir coloque [Y]"<<endl;
                 cin>>imprimirif;
                 if(imprimirif=="Y")
                 {
-                                    ofstream impresion;
-                impresion.open("RegistroAsistencia.txt", ios::app);
+                    ofstream impresion;
+                    impresion.open("RegistroAsistencia.txt", ios::app);
                     impresion << "\n========================================================================================" << endl;
                     impresion << "                 UNIDAD EDUCATIVA GOTITAS DEL SABER" << endl;
                     impresion << "                 REPORTE DE CALIFICACIONES" << endl;
@@ -389,12 +400,19 @@ void menu()
                     impresion<<"Aprobado: "<<aprobados<<endl;
                     impresion<<"Suspendidos: "<<suspendidos<<endl;
                     impresion<<"Reprobados: "<<reprobados<<endl;
+                    impresion<<"\n\t\t---------------------------"<<endl;
+                    impresion<<"\t\t\t"<<"Docente"<<endl;
+                    impresion<<"\t\t\t"<<nombremaestra<<endl;
+                    impresion<<"\t\t\t"<<cedulamaestra<<endl;
+
                     impresion.close();
                     cout<<"Imprimiendo TXT"<<endl;
 
 
-                }else{
-                cout<<"Regresando al menu principal"<<endl;
+                }
+                else
+                {
+                    cout<<"Regresando al menu principal"<<endl;
 
                 }
 
@@ -496,10 +514,15 @@ void menu()
 
                     }
                     cout<<"Promedio\n"<<endl;
+
                     for (int i = 0; i < numEstudiantes; i++)
                     {
                         estudiantesOrdenados[i].imprimirDatos();
                     }
+                    cout<<endl<<"\n\t\t---------------------------"<<endl;
+                    cout<<"\t\t\t"<<"Docente"<<endl;
+                    cout<<"\t\t\t"<<nombremaestra<<endl;
+                    cout<<"\t\t\t"<<cedulamaestra<<endl;
 
 
                     if((metodoOrdenacion != 10) && (metodoOrdenacion != 8) && (metodoOrdenacion != 9))
@@ -509,8 +532,15 @@ void menu()
                             impresion << "N°- " << "[" <<estudiantesOrdenados[i].getPromedio() << "]" << endl;
                             impresion << "Alumno: " << estudiantesOrdenados[i].getNombre() << " " << estudiantesOrdenados[i].getApellido() << endl;
                         }
+                        impresion<<"\n\t\t---------------------------"<<endl;
+                        impresion<<"\t\t\t"<<"Docente"<<endl;
+                        impresion<<"\t\t\t"<<nombremaestra<<endl;
+                        impresion<<"\t\t\t"<<cedulamaestra<<endl;
                         impresion.close();
+
+
                     }
+
 
                 }
             }
@@ -605,6 +635,10 @@ void menu()
                     impresion << "Alumno: " << estudianteEncontrado.getNombre() << " " << estudianteEncontrado.getApellido() << endl;
                     impresion << "Promedio: " << estudianteEncontrado.getPromedio() << endl;
                     impresion << "index: " << index << endl;
+                    cout<<endl<<"\t\t---------------------------"<<endl;
+                    cout<<"\t\t\t"<<"Docente"<<endl;
+                    cout<<"\t\t\t"<<nombremaestra<<endl;
+                    cout<<"\t\t\t"<<cedulamaestra<<endl;
                 }
                 else
                 {
@@ -687,8 +721,7 @@ bool validarCedula(const string& cedula)
 
 void menuBienvenida()
 {
-    string nombre;
-    string cedula;
+
     SetConsoleOutputCP(CP_UTF8);
 
     cout << "╔═══════════════════════════════════╗\n";
@@ -701,11 +734,11 @@ void menuBienvenida()
     while (true)
     {
         cout << "\nIngrese su nombre: ";
-        cin >> nombre ;
+        cin >> nombremaestra ;
 
 
 
-        if (esSoloLetras(nombre))
+        if (esSoloLetras(nombremaestra))
         {
             break;
         }
@@ -721,9 +754,9 @@ void menuBienvenida()
     while (true)
     {
         cout << "Ingrese su cédula: ";
-        cin >> cedula;
+        cin >> cedulamaestra;
 
-        if (validarCedula(cedula))
+        if (validarCedula(cedulamaestra))
         {
             cout << "Acceso concedido.\n";
             system("cls");

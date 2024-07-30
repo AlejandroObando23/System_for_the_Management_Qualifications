@@ -300,3 +300,38 @@ NRC: 2348
 Nombre		Apellido		Correo		N1	Promedio
 Alejandro	Obando		alejo@espe.edu.ec	19	19
 Erick		Obando		erickobando@espe.edu.ec	20	20
+
+========================================================================================
+                 UNIDAD EDUCATIVA GOTITAS DEL SABER
+                 REPORTE DE CALIFICACIONES
+PERIODO: Mayo 2024 - Septiembre 2024
+Materia: Fisica
+NRC: 1246
+Nombre		Apellido		Correo		N1	Promedio
+Alejandro	Obando		alejo@espe.edu.ec	19	19
+Erick		Obando		erick@espe.edu.ec	11	11
+
+Promedio general del curso es: 15
+Aprobado: 1
+Suspendidos: 1
+Reprobados: 0
+
+========================================================================================
+                 UNIDAD EDUCATIVA GOTITAS DEL SABER
+                 REPORTE DE CALIFICACIONES
+PERIODO: Mayo 2024 - Septiembre 2024
+Materia: Quimica
+NRC: 1345
+Nombre		Apellido		Correo		N1	Promedio
+Alejandro	Obando		alejo@espe.edu.ec	13	13
+Erick		Obando		erick@espe.edu.ec	10	10
+
+Promedio general del curso es: 11.5
+Aprobado: 0
+Suspendidos: 2
+Reprobados: 0
+
+		---------------------------
+			Docente
+			Alejandro
+			1721623369

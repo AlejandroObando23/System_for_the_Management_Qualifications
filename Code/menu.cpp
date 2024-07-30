@@ -324,6 +324,7 @@ void menu()
             if(notasIngresadas)
             {
                 string imprimirif;
+                double promediocurso;
 
                 cout << "\n========================================================================================" << endl;
                 cout << "                 UNIDAD EDUCATIVA GOTITAS DEL SABER" << endl;
@@ -340,8 +341,13 @@ void menu()
 
                 for (int i = 0; i < numEstudiantes; i++)
                 {
+
                     estudiante[i].imprimirDatos();
+                    promediocurso=estudiante[i].getPromedio() + promediocurso;
                 }
+                promediocurso=promediocurso/numEstudiantes;
+                cout<<endl<<"Promedio general del curso es: "<<promediocurso<<endl;
+
                 cout<<endl<<"Desea imprimir en un txt.Para imprimir coloque [Y]"<<endl;
                 cin>>imprimirif;
                 if(imprimirif=="Y")
@@ -364,6 +370,7 @@ void menu()
                     {
                         estudiante[i].imprimirDatostxt(impresion);
                     }
+                    impresion<<endl<<"Promedio general del curso es: "<<promediocurso<<endl;
                     impresion.close();
                     cout<<"Imprimiendo TXT"<<endl;
 

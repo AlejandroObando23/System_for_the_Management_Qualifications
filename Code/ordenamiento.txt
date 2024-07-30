@@ -42,3 +42,36 @@ N°- [12]
 Alumno: Erick Obando
 N°- [15]
 Alumno: Alejandro Obando
+
+========================================================================================
+                 UNIDAD EDUCATIVA GOTITAS DEL SABER
+                 REPORTE DE CALIFICACIONES ORDENADAS
+
+Calificaciones Ordenadas
+ALGORITMO: Intercambio Simple
+N°- [19]
+Alumno: Alejandro Obando
+N°- [20]
+Alumno: Erick Obando
+
+========================================================================================
+                 UNIDAD EDUCATIVA GOTITAS DEL SABER
+                 REPORTE DE CALIFICACIONES ORDENADAS
+
+Calificaciones Ordenadas
+ALGORITMO: Intercambio Simple
+N°- [19]
+Alumno: Alejandro Obando
+N°- [20]
+Alumno: Erick Obando
+
+========================================================================================
+                 UNIDAD EDUCATIVA GOTITAS DEL SABER
+                 REPORTE DE CALIFICACIONES ORDENADAS
+
+Calificaciones Ordenadas
+ALGORITMO: Intercambio Simple
+N°- [19]
+Alumno: Alejandro Obando
+N°- [20]
+Alumno: Erick Obando

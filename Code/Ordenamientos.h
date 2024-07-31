@@ -2,6 +2,8 @@
 #define ORDENAMIENTOS_H
 
 #include <iostream>
+#include <fstream>
+
 const int MAX = 100;
 using namespace std;
 
@@ -168,6 +170,23 @@ void bucketSort(T vector[], int n, int m) {
 }
 
 template <typename T>
+void guardarArregloEnArchivo( T arr[], int inicio, int fin, const string& nombreArchivo) {
+    ofstream archivo(nombreArchivo, ios::app);
+    if (archivo.is_open()) {
+        archivo<< "\n========================================================================================" << endl;
+
+        for (int i = inicio; i <= fin; ++i) {
+            archivo << "N°- " << "[" <<arr[i].getPromedio() << "]" << endl;
+            archivo << "Alumno: " << arr[i].getNombre() << " " << arr[i].getApellido() << endl;
+        }
+        archivo << endl;
+        archivo.close();
+    } else {
+        cout << "No se pudo abrir el archivo: " << nombreArchivo << endl;
+    }
+}
+
+template <typename T>
 void mezclar(T arr[], int izquierda, int medio, int derecha) {
     int n1 = medio - izquierda + 1;
     int n2 = derecha - medio;
@@ -177,6 +196,9 @@ void mezclar(T arr[], int izquierda, int medio, int derecha) {
 
     for (int i = 0; i < n1; ++i) L[i] = arr[izquierda + i];
     for (int j = 0; j < n2; ++j) R[j] = arr[medio + 1 + j];
+
+    guardarArregloEnArchivo(arr, izquierda, medio, "particion1.txt");
+    guardarArregloEnArchivo(arr, medio + 1, derecha, "particion2.txt");
 
     int i = 0, j = 0, k = izquierda;
     while (i < n1 && j < n2) {
@@ -188,6 +210,8 @@ void mezclar(T arr[], int izquierda, int medio, int derecha) {
     }
     while (i < n1) arr[k++] = L[i++];
     while (j < n2) arr[k++] = R[j++];
+
+    guardarArregloEnArchivo(arr, izquierda, derecha, "fusion.txt");
 
     delete[] L;
     delete[] R;

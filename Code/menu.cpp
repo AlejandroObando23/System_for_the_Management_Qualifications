@@ -436,8 +436,6 @@ void menu()
                 for(int i =0; i< numEstudiantes; i++)
                 {
                     estudiantesOrdenados[i]=estudiante[i];
-                    estudiantesOrdenados[i].imprimirDatos();
-                    system("pause");
                 }
                 metodoOrdenacion = escogerMetodoOrdenacion();
 

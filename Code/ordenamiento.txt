@@ -139,3 +139,254 @@ Alumno: Alejandro Obando
 			Docente
 			Alejandro
 			1721623369
+
+========================================================================================
+                 UNIDAD EDUCATIVA GOTITAS DEL SABER
+                 REPORTE DE CALIFICACIONES ORDENADAS
+
+Calificaciones Ordenadas
+ALGORITMO: Intercambio Simple
+N°- [12.5]
+Alumno: alejo Oban
+N°- [15.5]
+Alumno: Milena Baraja
+N°- [18.5]
+Alumno: Mateo Medranda
+
+		---------------------------
+			Docente
+			Carlos
+			1755281399
+
+========================================================================================
+                 UNIDAD EDUCATIVA GOTITAS DEL SABER
+                 REPORTE DE CALIFICACIONES ORDENADAS
+
+Calificaciones Ordenadas
+ALGORITMO: Intercambio Simple
+N°- [4.5]
+Alumno: dfdfdfd dfdfd
+N°- [12.5]
+Alumno: asdada dfdfdf
+N°- [16.5]
+Alumno: adada asdad
+
+		---------------------------
+			Docente
+			Carlos
+			1755281399
+
+========================================================================================
+                 UNIDAD EDUCATIVA GOTITAS DEL SABER
+                 REPORTE DE CALIFICACIONES ORDENADAS
+
+Calificaciones Ordenadas
+ALGORITMO: Selección
+N°- [4.5]
+Alumno: dfdfdfd dfdfd
+N°- [12.5]
+Alumno: asdada dfdfdf
+N°- [16.5]
+Alumno: adada asdad
+
+		---------------------------
+			Docente
+			Carlos
+			1755281399
+
+========================================================================================
+                 UNIDAD EDUCATIVA GOTITAS DEL SABER
+                 REPORTE DE CALIFICACIONES ORDENADAS
+
+Calificaciones Ordenadas
+ALGORITMO: Intercambio Simple
+N°- [12.5]
+Alumno: sdfdfdf dgdfdf
+N°- [15.5]
+Alumno: dadad adadad
+N°- [18.5]
+Alumno: adada dgdg
+
+		---------------------------
+			Docente
+			dada
+			1755281399
+
+========================================================================================
+                 UNIDAD EDUCATIVA GOTITAS DEL SABER
+                 REPORTE DE CALIFICACIONES ORDENADAS
+
+Calificaciones Ordenadas
+ALGORITMO: Intercambio Simple
+N°- [11.5]
+Alumno: adada sfsf
+N°- [15.5]
+Alumno: dadad adad
+N°- [18.5]
+Alumno: dadad addad
+
+		---------------------------
+			Docente
+			adada
+			1755281399
+
+========================================================================================
+                 UNIDAD EDUCATIVA GOTITAS DEL SABER
+                 REPORTE DE CALIFICACIONES ORDENADAS
+
+Calificaciones Ordenadas
+ALGORITMO: Intercambio Simple
+N°- [11.5]
+Alumno: dfdfdf dfdfdf
+N°- [15.5]
+Alumno: adada adada
+N°- [18.5]
+Alumno: daadada sfsf
+
+		---------------------------
+			Docente
+			asdada
+			1755281399
+
+========================================================================================
+                 UNIDAD EDUCATIVA GOTITAS DEL SABER
+                 REPORTE DE CALIFICACIONES ORDENADAS
+
+Calificaciones Ordenadas
+ALGORITMO: Intercambio Simple
+N°- [11.5]
+Alumno: adadad fdsfsf
+N°- [16.5]
+Alumno: adad adad
+N°- [18.5]
+Alumno: dadad adad
+
+		---------------------------
+			Docente
+			carlos
+			1755281399
+
+========================================================================================
+                 UNIDAD EDUCATIVA GOTITAS DEL SABER
+                 REPORTE DE CALIFICACIONES ORDENADAS
+
+Calificaciones Ordenadas
+ALGORITMO: Intercambio Simple
+N°- [11.5]
+Alumno: adadad fdsfsf
+N°- [16.5]
+Alumno: adad adad
+N°- [18.5]
+Alumno: dadad adad
+
+		---------------------------
+			Docente
+			carlos
+			1755281399
+
+========================================================================================
+                 UNIDAD EDUCATIVA GOTITAS DEL SABER
+                 REPORTE DE CALIFICACIONES ORDENADAS
+
+Calificaciones Ordenadas
+ALGORITMO: Selección
+N°- [11.5]
+Alumno: adadad fdsfsf
+N°- [16.5]
+Alumno: adad adad
+N°- [18.5]
+Alumno: dadad adad
+
+		---------------------------
+			Docente
+			carlos
+			1755281399
+
+========================================================================================
+                 UNIDAD EDUCATIVA GOTITAS DEL SABER
+                 REPORTE DE CALIFICACIONES ORDENADAS
+
+Calificaciones Ordenadas
+ALGORITMO: Burbuja
+N°- [11.5]
+Alumno: adadad fdsfsf
+N°- [16.5]
+Alumno: adad adad
+N°- [18.5]
+Alumno: dadad adad
+
+		---------------------------
+			Docente
+			carlos
+			1755281399
+
+========================================================================================
+                 UNIDAD EDUCATIVA GOTITAS DEL SABER
+                 REPORTE DE CALIFICACIONES ORDENADAS
+
+Calificaciones Ordenadas
+ALGORITMO: QuickSort
+N°- [11.5]
+Alumno: adadad fdsfsf
+N°- [16.5]
+Alumno: adad adad
+N°- [18.5]
+Alumno: dadad adad
+
+		---------------------------
+			Docente
+			carlos
+			1755281399
+
+========================================================================================
+                 UNIDAD EDUCATIVA GOTITAS DEL SABER
+                 REPORTE DE CALIFICACIONES ORDENADAS
+
+Calificaciones Ordenadas
+ALGORITMO: ShellSort
+N°- [11.5]
+Alumno: adadad fdsfsf
+N°- [16.5]
+Alumno: adad adad
+N°- [18.5]
+Alumno: dadad adad
+
+		---------------------------
+			Docente
+			carlos
+			1755281399
+
+========================================================================================
+                 UNIDAD EDUCATIVA GOTITAS DEL SABER
+                 REPORTE DE CALIFICACIONES ORDENADAS
+
+Calificaciones Ordenadas
+N°- [16.5]
+Alumno: adad adad
+N°- [18.5]
+Alumno: dadad adad
+N°- [11.5]
+Alumno: adadad fdsfsf
+
+		---------------------------
+			Docente
+			carlos
+			1755281399
+
+========================================================================================
+                 UNIDAD EDUCATIVA GOTITAS DEL SABER
+                 REPORTE DE CALIFICACIONES ORDENADAS
+
+Calificaciones Ordenadas
+ALGORITMO: RadixSort
+N°- [11.5]
+Alumno: adadad fdsfsf
+N°- [16.5]
+Alumno: adad adad
+N°- [18.5]
+Alumno: dadad adad
+
+		---------------------------
+			Docente
+			carlos
+			1755281399

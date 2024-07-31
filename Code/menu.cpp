@@ -416,11 +416,6 @@ void menu()
 
                 }
 
-
-
-
-
-
             }
             else
             {
@@ -441,6 +436,8 @@ void menu()
                 for(int i =0; i< numEstudiantes; i++)
                 {
                     estudiantesOrdenados[i]=estudiante[i];
+                    estudiantesOrdenados[i].imprimirDatos();
+                    system("pause");
                 }
                 metodoOrdenacion = escogerMetodoOrdenacion();
 
@@ -452,8 +449,7 @@ void menu()
                     impresion << "\nCalificaciones Ordenadas" << endl;
                 }
 
-                switch (metodoOrdenacion)
-                {
+                switch (metodoOrdenacion){
                 case 1:
                     cout << "Método de Intercambio Simple seleccionado." << endl;
                     ordenamientoIntercambio(estudiantesOrdenados, numEstudiantes);
@@ -557,7 +553,7 @@ void menu()
         {
             tablaHash<Estudiante> tabla(numEstudiantes + 1);
             double calificacion;
-            int index;
+            int index=-1;
             Estudiante estudianteEncontrado;
             ofstream impresion;
             impresion.open("busqueda.txt", ios::app);
@@ -640,7 +636,7 @@ void menu()
                     cout<<"\t\t\t"<<nombremaestra<<endl;
                     cout<<"\t\t\t"<<cedulamaestra<<endl;
                 }
-                else
+                else if(metodoBusqueda !=4)
                 {
                     cout << "Calificación no encontrada." << endl;
                     impresion << "Calificación no encontrada." << endl;

@@ -4,7 +4,8 @@
 
 using namespace std;
 
-class Estudiante{
+class Estudiante
+{
 private:
     string nombre;
     string apellido;
@@ -14,82 +15,106 @@ private:
     int N;
 
 public:
-    Estudiante(){}
+    Estudiante() {}
 
-    void setNotas(int n){
+    void setNotas(int n)
+    {
         notas = new double[n];
         N = n;
     }
 
-    void setNombre(string n){
+    void setNombre(string n)
+    {
         nombre=n;
     }
-    void setApellido(string a){
+    void setApellido(string a)
+    {
         apellido=a;
     }
 
-    void setCorreo(string c) {
+    void setCorreo(string c)
+    {
         correo = c;
     }
 
-    bool validarCorreo() {
+    bool validarCorreo()
+    {
         string patron = nombre + "@espe.edu.ec";
         return correo == patron;
     }
 
-    void ingresoNota(int i, double n){
+    void ingresoNota(int i, double n)
+    {
         notas[i] = n;
     }
 
-    void promediar(){
+    void promediar()
+    {
         double suma=0;
-        for(int i = 0; i<N; i++){
+        for(int i = 0; i<N; i++)
+        {
             suma = suma + notas[i];
         }
         double valor = suma/N;
         promedio = round(valor * 100.0) / 100.0;
     }
 
-    void setPromedio(double n){
+    void setPromedio(double n)
+    {
         promedio = n;
     }
 
-    double getPromedio()const{
+    double getPromedio()const
+    {
         return promedio;
     }
 
-    string getNombre(){
+    string getNombre()
+    {
         return nombre;
     }
 
-    string getApellido(){
+    string getApellido()
+    {
         return apellido;
     }
 
-    string getCorreo() {
+    string getCorreo()
+    {
         return correo;
     }
 
-    void imprimirDatostxt(ofstream& impresion){
+    void imprimirDatostxt(ofstream& impresion)
+    {
 
         impresion<< nombre;
-        if(nombre.size()<7){
+        if(nombre.size()<7)
+        {
             impresion<<"\t\t"<<apellido;
-        }else{
+        }
+        else
+        {
             impresion<<"\t"<<apellido;
         }
-        if(apellido.size()<7){
+        if(apellido.size()<7)
+        {
             impresion<<"\t\t"<<correo;
-        }else{
+        }
+        else
+        {
             impresion<<"\t"<<correo;
         }
-        if(correo.size()<7){
+        if(correo.size()<7)
+        {
             impresion<<"\t\t";
-        }else{
+        }
+        else
+        {
             impresion<<"\t";
         }
 
-        for(int i = 0; i<N; i++){
+        for(int i = 0; i<N; i++)
+        {
             impresion<< notas[i]<<"\t";
         }
         impresion << promedio << endl;
@@ -97,39 +122,47 @@ public:
 
     }
 
-        void imprimirDatos(){
+    void imprimirDatos()
+    {
 
         cout<< nombre;
-        if(nombre.size()<7){
+        if(nombre.size()<7)
+        {
             cout<<"\t\t"<<apellido;
-        }else{
+        }
+        else
+        {
             cout<<"\t"<<apellido;
         }
-        if(apellido.size()<7){
+        if(apellido.size()<7)
+        {
             cout<<"\t\t"<<correo;
-        }else{
+        }
+        else
+        {
             cout<<"\t"<<correo;
         }
-        if(correo.size()<7){
+        if(correo.size()<7)
+        {
             cout<<"\t\t";
-        }else{
+        }
+        else
+        {
             cout<<"\t";
         }
 
-        for(int i = 0; i<N; i++){
+        for(int i = 0; i<N; i++)
+        {
             cout<< notas[i]<<"\t";
         }
         cout << promedio << endl;
 
 
     }
-    bool operator<=(const Estudiante& otro) const {
+
+    bool operator<=(const Estudiante& otro) const
+    {
         return this->getPromedio() <= otro.getPromedio();
     }
 
-
-    // Destructor para liberar memoria
-    ~Estudiante() {
-        delete[] notas;
-    }
 };

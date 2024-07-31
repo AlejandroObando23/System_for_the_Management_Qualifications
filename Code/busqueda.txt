@@ -200,3 +200,49 @@ Corresponde al estudiante:
 Alumno: Erick Obando
 Promedio: 7
 index: 1
+Calificación no encontrada.
+
+========================================================================================
+                 UNIDAD EDUCATIVA GOTITAS DEL SABER
+                 REPORTE DE CALIFICACIONES ORDENADAS
+
+ Búqueda de calificaciones
+
+ La calificación a buscar fue: 16.5
+Calificación no encontrada.
+
+========================================================================================
+                 UNIDAD EDUCATIVA GOTITAS DEL SABER
+                 REPORTE DE CALIFICACIONES ORDENADAS
+
+ Búqueda de calificaciones
+
+ La calificación a buscar fue: 16.5
+Calificación no encontrada.
+
+========================================================================================
+                 UNIDAD EDUCATIVA GOTITAS DEL SABER
+                 REPORTE DE CALIFICACIONES ORDENADAS
+
+ Búqueda de calificaciones
+
+ La calificación a buscar fue: 15.5
+
+ALGORITMO: Busqueda Lineal
+
+Corresponde al estudiante: 
+Alumno: dadad adad
+Promedio: 15.5
+index: 0
+
+========================================================================================
+                 UNIDAD EDUCATIVA GOTITAS DEL SABER
+                 REPORTE DE CALIFICACIONES ORDENADAS
+
+ Búqueda de calificaciones
+
+ La calificación a buscar fue: 20
+Calificación no encontrada.
+Calificación no encontrada.
+Calificación no encontrada.
+Calificación no encontrada.

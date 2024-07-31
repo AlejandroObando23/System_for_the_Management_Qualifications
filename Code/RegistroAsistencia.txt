@@ -335,3 +335,192 @@ Reprobados: 0
 			Docente
 			Alejandro
 			1721623369
+
+========================================================================================
+                 UNIDAD EDUCATIVA GOTITAS DEL SABER
+                 REPORTE DE CALIFICACIONES
+PERIODO: Mayo 2024 - Septiembre 2024
+Materia: estadistica
+NRC: 13613
+Nombre		Apellido		Correo		N1	N2	Promedio
+Milena		Baraja		mabaraja@espe.edu.ec	15	16	15.5
+Mateo		Medranda	mdmedranda@espe.edu.ec	17	18	17.5
+Alejandro	Oban		adad@espe.edu.ec	13	12	12.5
+
+Promedio general del curso es: 15.1667
+Aprobado: 2
+Suspendidos: 1
+Reprobados: 0
+
+		---------------------------
+			Docente
+			Carlos
+			1755281399
+
+========================================================================================
+                 UNIDAD EDUCATIVA GOTITAS DEL SABER
+                 REPORTE DE CALIFICACIONES
+PERIODO: Mayo 2024 - Septiembre 2024
+Materia: estadistica
+NRC: 13613
+Nombre		Apellido		Correo		N1	N2	Promedio
+Milena		Baraja		mabaraja@espe.edu.ec	15	16	15.5
+Mateo		Medranda	mateo@espe.edu.ec	17	18	17.5
+Alejandro	Oban		adad@espe.edu.ec	13	12	12.5
+
+Promedio general del curso es: 15.1667
+Aprobado: 2
+Suspendidos: 1
+Reprobados: 0
+
+		---------------------------
+			Docente
+			Carlos
+			1755281399
+
+========================================================================================
+                 UNIDAD EDUCATIVA GOTITAS DEL SABER
+                 REPORTE DE CALIFICACIONES
+PERIODO: Mayo 2024 - Septiembre 2024
+Materia: estadistica
+NRC: 13613
+Nombre		Apellido		Correo		N1	N2	Promedio
+Milena		Baraja		adad@espe.edu.ec	15	16	15.5
+Mateo		Medranda	adada@espe.edu.ec	18	19	18.5
+alejo		Oban		dfdfdf@espe.edu.ec	12	13	12.5
+
+Promedio general del curso es: 20.6667
+Aprobado: 2
+Suspendidos: 1
+Reprobados: 0
+
+		---------------------------
+			Docente
+			Carlos
+			1755281399
+
+========================================================================================
+                 UNIDAD EDUCATIVA GOTITAS DEL SABER
+                 REPORTE DE CALIFICACIONES
+PERIODO: Mayo 2024 - Septiembre 2024
+Materia: estadistica
+NRC: 13613
+Nombre		Apellido		Correo		N1	N2	Promedio
+Milena		Baraja		adad@espe.edu.ec	15	16	15.5
+Mateo		Medranda	adada@espe.edu.ec	18	19	18.5
+alejo		Oban		dfdfdf@espe.edu.ec	12	13	12.5
+
+Promedio general del curso es: 22.3889
+Aprobado: 2
+Suspendidos: 1
+Reprobados: 0
+
+		---------------------------
+			Docente
+			Carlos
+			1755281399
+
+========================================================================================
+                 UNIDAD EDUCATIVA GOTITAS DEL SABER
+                 REPORTE DE CALIFICACIONES
+PERIODO: Mayo 2024 - Septiembre 2024
+Materia: estadistica
+NRC: 13613
+Nombre		Apellido		Correo		N1	N2	Promedio
+adada		asdad		dada@espe.edu.ec	16	17	16.5
+asdada		dfdfdf		dfdf@espe.edu.ec	12	13	12.5
+dfdfdfd	dfdfd		dfdf@espe.edu.ec	5	4	4.5
+
+Promedio general del curso es: 11.1667
+Aprobado: 1
+Suspendidos: 1
+Reprobados: 1
+
+		---------------------------
+			Docente
+			Carlos
+			1755281399
+
+========================================================================================
+                 UNIDAD EDUCATIVA GOTITAS DEL SABER
+                 REPORTE DE CALIFICACIONES
+PERIODO: Mayo 2024 - Septiembre 2024
+Materia: estadistica
+NRC: 13613
+Nombre		Apellido		Correo		N1	N2	Promedio
+adada		asdad		dada@espe.edu.ec	4.64336e-306	17	16.5
+asdada		dfdfdf		dfdf@espe.edu.ec	4.70655e-306	13	12.5
+dfdfdfd	dfdfd		dfdf@espe.edu.ec	4.6536e-306	4	4.5
+
+Promedio general del curso es: 16.5432
+Aprobado: 1
+Suspendidos: 1
+Reprobados: 1
+
+		---------------------------
+			Docente
+			Carlos
+			1755281399
+
+========================================================================================
+                 UNIDAD EDUCATIVA GOTITAS DEL SABER
+                 REPORTE DE CALIFICACIONES
+PERIODO: Mayo 2024 - Septiembre 2024
+Materia: DAAD
+NRC: 13613
+Nombre		Apellido		Correo		N1	N2	Promedio
+dadad		adada		adad@espe.edu.ec	12	13	12.5
+asdsadad	adada		sfdf@espe.edu.ec	4	5	4.5
+adadad		dgdgd		dgdg@espe.edu.ec	10	11	10.5
+
+Promedio general del curso es: 9.16667
+Aprobado: 0
+Suspendidos: 2
+Reprobados: 1
+
+		---------------------------
+			Docente
+			cARLOS
+			1755281399
+
+========================================================================================
+                 UNIDAD EDUCATIVA GOTITAS DEL SABER
+                 REPORTE DE CALIFICACIONES
+PERIODO: Mayo 2024 - Septiembre 2024
+Materia: estadistica
+NRC: 13613
+Nombre		Apellido		Correo		N1	N2	Promedio
+dadad		adadad		dadad@espe.edu.ec	16	15	15.5
+adada		dgdg		ddg@espe.edu.ec	19	18	18.5
+sdfdfdf	dgdfdf		dfmkdfm@espe.edu.ec	12	13	12.5
+
+Promedio general del curso es: 15.5
+Aprobado: 2
+Suspendidos: 1
+Reprobados: 0
+
+		---------------------------
+			Docente
+			dada
+			1755281399
+
+========================================================================================
+                 UNIDAD EDUCATIVA GOTITAS DEL SABER
+                 REPORTE DE CALIFICACIONES
+PERIODO: Mayo 2024 - Septiembre 2024
+Materia: dasda
+NRC: 1213
+Nombre		Apellido		Correo		N1	N2	Promedio
+dadad		adad		adad@espe.edu.ec	16	15	15.5
+dadad		addad		fdfdf@espe.edu.ec	19	18	18.5
+adada		sfsf		sfsf@espe.edu.ec	12	11	11.5
+
+Promedio general del curso es: 15.1667
+Aprobado: 2
+Suspendidos: 1
+Reprobados: 0
+
+		---------------------------
+			Docente
+			adada
+			1755281399

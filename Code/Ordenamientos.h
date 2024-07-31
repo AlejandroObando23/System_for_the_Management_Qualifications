@@ -206,28 +206,44 @@ void mezclaDirecta(T arr[], int izquierda, int derecha) {
 }
 
 template <typename T>
+void secuencias(T arr[], int n, int secuencia[], int &cont) {
+    cont = 0;
+    int i = 0;
+
+    while (i < n) {
+        secuencia[cont++] = i;
+        while (i < n - 1 && arr[i] <= arr[i + 1])
+            i++;
+        i++;
+    }
+}
+
+template <typename T>
 void mezclaNatural(T arr[], int n) {
-    int* inicios = new int[n + 1];
-    int numInicios = 0;
+    if (n <= 1)
+        return;
 
-    inicios[numInicios++] = 0;
+    int* secuencia = new int[n + 1]; // Lista de índices de inicio de subsecuencias ordenadas
+    int cont = 0;
 
-    for (int i = 1; i < n; ++i) {
-        if (arr[i] <= arr[i - 1]) {
-            inicios[numInicios++] = i;
+    while (true) {
+        secuencias(arr, n, secuencia, cont);
+
+        // Si solo hay una subsecuencia, la lista ya está ordenada
+        if (cont == 1)
+            break;
+
+        // Fusión de las subsecuencias
+        for (int i = 0; i < cont - 1; i += 2) {
+            int izq = secuencia[i];
+            int med = secuencia[i + 1] - 1;
+            int der = (i + 2 < cont) ? secuencia[i + 2] - 1 : n - 1;
+
+            mezclar(arr, izq, med, der);
         }
     }
-    inicios[numInicios++] = n;
 
-    for (int i = 1; i < numInicios; ++i) {
-        int izquierda = inicios[i - 1];
-        int derecha = inicios[i];
-        int medio = izquierda + (derecha - izquierda) / 2 - 1;
-
-        mezclar(arr, izquierda, medio, derecha - 1);
-    }
-
-    delete[] inicios;
+    delete[] secuencia;
 }
 
 template <typename T>
